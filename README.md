@@ -2,7 +2,7 @@
 
 Professional personal portfolio website for Anderson Nogueira (Anderson Shinobi), focused on embedded firmware engineering, Linux workflows, certifications and AI-assisted engineering workflow documentation.
 
-The portfolio includes projects, technical stack, certifications and AI-assisted engineering workflow.
+The portfolio includes projects, technical stack, education & technical background, certifications and AI-assisted engineering workflow.
 
 Site URL:
 
