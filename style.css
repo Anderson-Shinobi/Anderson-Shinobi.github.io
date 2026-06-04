@@ -350,6 +350,15 @@ p {
   margin-bottom: 1rem;
 }
 
+.contact-email-text {
+  margin-bottom: 0.25rem;
+}
+
+.contact-email-note {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
 .contact-links {
   display: flex;
   flex-wrap: wrap;
