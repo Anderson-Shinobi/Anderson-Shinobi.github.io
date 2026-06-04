@@ -1,6 +1,6 @@
 # Anderson Shinobi GitHub Pages Portfolio
 
-Professional personal portfolio website for Anderson Nogueira (Anderson Shinobi), focused on embedded firmware engineering, Linux workflows, technical stack evolution, certifications and AI-assisted engineering workflow documentation.
+Professional personal portfolio website for Anderson Nogueira (Anderson Shinobi), focused on embedded firmware engineering, Linux workflows, certifications and AI-assisted engineering workflow documentation.
 
 The portfolio includes projects, technical stack, certifications and AI-assisted engineering workflow.
 
@@ -21,7 +21,9 @@ GitHub profile:
 ├── style.css
 ├── script.js
 ├── assets/
-│   └── .gitkeep
+│   ├── .gitkeep
+│   └── images/
+│       └── profile.jpg
 └── README.md
 ```
 
@@ -30,6 +32,7 @@ GitHub profile:
 1. Open the repository folder on your machine.
 2. Open `index.html` directly in a browser.
 3. Open `certifications.html` directly in a browser to view the full training catalog page.
+4. Add your profile image at `assets/images/profile.jpg` if it is not present yet.
 
 No build step and no external dependencies are required.
 
