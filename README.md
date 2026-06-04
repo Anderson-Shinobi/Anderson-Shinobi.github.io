@@ -1,6 +1,16 @@
 # Anderson Shinobi GitHub Pages Portfolio
 
-Professional personal portfolio website for Anderson Nogueira (Anderson Shinobi), focused on embedded firmware engineering, Linux workflows and technical project documentation.
+Professional personal portfolio website for Anderson Nogueira (Anderson Shinobi), focused on embedded firmware engineering, Linux workflows, technical stack evolution, certifications and AI-assisted engineering workflow documentation.
+
+The portfolio includes projects, technical stack, certifications and AI-assisted engineering workflow.
+
+Site URL:
+
+[https://anderson-shinobi.github.io/](https://anderson-shinobi.github.io/)
+
+GitHub profile:
+
+[https://github.com/Anderson-Shinobi](https://github.com/Anderson-Shinobi)
 
 ## Project Structure
 
