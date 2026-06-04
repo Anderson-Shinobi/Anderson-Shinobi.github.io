@@ -17,6 +17,7 @@ GitHub profile:
 ```text
 .
 ├── index.html
+├── certifications.html
 ├── style.css
 ├── script.js
 ├── assets/
@@ -28,6 +29,7 @@ GitHub profile:
 
 1. Open the repository folder on your machine.
 2. Open `index.html` directly in a browser.
+3. Open `certifications.html` directly in a browser to view the full training catalog page.
 
 No build step and no external dependencies are required.
 
