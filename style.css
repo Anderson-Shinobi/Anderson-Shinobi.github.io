@@ -258,15 +258,18 @@ p {
 .hero-image-wrap {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .profile-image {
-  width: clamp(220px, 32vw, 360px);
+  width: clamp(220px, 30vw, 360px);
   aspect-ratio: 1 / 1;
+  display: block;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--color-primary-soft);
-  box-shadow: 0 0 0 6px rgba(60, 0, 97, 0.22), 0 0 34px var(--color-primary-glow);
+  object-position: center 34%;
+  border: 2px solid var(--color-primary-soft);
+  box-shadow: 0 0 0 4px rgba(60, 0, 97, 0.2), 0 0 22px rgba(60, 0, 97, 0.35);
   background: #0b0b0e;
 }
 
@@ -383,7 +386,7 @@ p {
   }
 
   .hero-image-wrap {
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .stack-grid,
@@ -428,5 +431,9 @@ p {
 
   .brand-sub {
     display: none;
+  }
+
+  .profile-image {
+    width: min(78vw, 300px);
   }
 }
