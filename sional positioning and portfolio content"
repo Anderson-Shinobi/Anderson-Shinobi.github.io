@@ -1,0 +1,128 @@
+[1mdiff --git a/certifications.html b/certifications.html[m
+[1mindex 18a6323..9be411b 100644[m
+[1m--- a/certifications.html[m
+[1m+++ b/certifications.html[m
+[36m@@ -20,9 +20,9 @@[m
+   <meta property="og:type" content="website" />[m
+   <meta property="og:url" content="https://anderson-shinobi.github.io/certifications.html" />[m
+   <meta property="og:image" content="https://anderson-shinobi.github.io/assets/images/profile.jpg" />[m
+[31m-  <link rel="icon" href="assets/favicon.ico" />[m
+[31m-  <link rel="shortcut icon" href="assets/favicon.ico" />[m
+[31m-  <link rel="apple-touch-icon" href="assets/favicon.png" />[m
+[32m+[m[32m  <link rel="icon" href="assets/images/profile.jpg" />[m
+[32m+[m[32m  <link rel="shortcut icon" href="assets/images/profile.jpg" />[m
+[32m+[m[32m  <link rel="apple-touch-icon" href="assets/images/profile.jpg" />[m
+   <title>Professional Training Catalog | Anderson Shinobi</title>[m
+   <link rel="stylesheet" href="style.css" />[m
+ </head>[m
+[36m@@ -35,7 +35,7 @@[m
+         <span class="logo-icon">&lt;/&gt;</span>[m
+         <span>[m
+           <span class="brand-main">Anderson Nogueira</span>[m
+[31m-          <span class="brand-sub">Embedded Firmware Developer in Progress</span>[m
+[32m+[m[32m          <span class="brand-sub">C/C++ • Linux • Qt • STM32 • ESP32 • Embedded Systems</span>[m
+         </span>[m
+       </a>[m
+ [m
+[1mdiff --git a/index.html b/index.html[m
+[1mindex e698f64..99b3df8 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -5,7 +5,7 @@[m
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />[m
+   <meta[m
+     name="description"[m
+[31m-    content="Anderson Nogueira - Embedded Firmware Developer in Progress. Portfolio focused on embedded systems, Linux and C/C++ firmware workflows."[m
+[32m+[m[32m    content="Anderson Nogueira - Embedded Firmware Developer. Portfolio focused on C/C++, Linux, Qt, STM32, ESP32 and embedded systems engineering projects."[m
+   />[m
+   <meta[m
+     name="keywords"[m
+[36m@@ -20,9 +20,9 @@[m
+   <meta property="og:type" content="website" />[m
+   <meta property="og:url" content="https://anderson-shinobi.github.io/" />[m
+   <meta property="og:image" content="https://anderson-shinobi.github.io/assets/images/profile.jpg" />[m
+[31m-  <link rel="icon" href="assets/favicon.ico" />[m
+[31m-  <link rel="shortcut icon" href="assets/favicon.ico" />[m
+[31m-  <link rel="apple-touch-icon" href="assets/favicon.png" />[m
+[32m+[m[32m  <link rel="icon" href="assets/images/profile.jpg" />[m
+[32m+[m[32m  <link rel="shortcut icon" href="assets/images/profile.jpg" />[m
+[32m+[m[32m  <link rel="apple-touch-icon" href="assets/images/profile.jpg" />[m
+   <title>Anderson Nogueira | Embedded Firmware Portfolio</title>[m
+   <link rel="stylesheet" href="style.css" />[m
+ </head>[m
+[36m@@ -35,7 +35,7 @@[m
+         <span class="logo-icon">&lt;/&gt;</span>[m
+         <span>[m
+           <span class="brand-main">Anderson Nogueira</span>[m
+[31m-          <span class="brand-sub">Embedded Firmware Developer in Progress</span>[m
+[32m+[m[32m          <span class="brand-sub">C/C++ • Linux • Qt • STM32 • ESP32 • Embedded Systems</span>[m
+         </span>[m
+       </a>[m
+ [m
+[36m@@ -66,7 +66,7 @@[m
+         <div class="hero-copy">[m
+           <p class="hero-greeting">Hello, I'm</p>[m
+           <h1>Anderson Nogueira</h1>[m
+[31m-          <p class="hero-title">Embedded Firmware Developer<br />in Progress</p>[m
+[32m+[m[32m          <p class="hero-title">Embedded Firmware Developer</p>[m
+           <p class="hero-text">[m
+             I build practical embedded systems, firmware workflows and Linux-based engineering tools, combining[m
+             hardware diagnostics, C/C++, Qt, STM32, ESP32 and AI-assisted engineering.[m
+[36m@@ -101,13 +101,13 @@[m
+         <article class="card">[m
+           <h2>About Me</h2>[m
+           <p>[m
+[31m-            I am an electronics professional transitioning into embedded firmware engineering, with practical[m
+[31m-            experience in PCB analysis, electronic diagnostics, Linux tooling, Qt/C++ applications, firmware[m
+[31m-            workflow design and technical documentation.[m
+[32m+[m[32m            I am an Embedded Firmware Developer with a background in electronics, software development,[m
+[32m+[m[32m            Linux-based tooling and embedded systems engineering. My work includes PCB analysis, electronic[m
+[32m+[m[32m            diagnostics, Qt/C++ applications, firmware workflow design and technical documentation.[m
+           </p>[m
+           <p>[m
+[31m-            I focus on building reliable, maintainable and well-documented technical projects while continuously[m
+[31m-            improving my embedded systems engineering skills.[m
+[32m+[m[32m            I focus on building reliable, maintainable and well-documented software and firmware projects with[m
+[32m+[m[32m            practical engineering execution.[m
+           </p>[m
+           <a class="btn btn-outline" href="#projects">Learn more about my work</a>[m
+         </article>[m
+[36m@@ -129,9 +129,9 @@[m
+       <div class="container">[m
+         <h2>Education &amp; Technical Background</h2>[m
+         <p>[m
+[31m-          My technical path combines electronics, systems development, postgraduate engineering studies and a[m
+[31m-          planned academic expansion into Physics, with emphasis on applied physics, electronics, instrumentation[m
+[31m-          and computational thinking.[m
+[32m+[m[32m          My technical path combines electronics, systems development, postgraduate engineering studies and[m
+[32m+[m[32m          ongoing Physics studies, with emphasis on applied physics, electronics, instrumentation and[m
+[32m+[m[32m          computational thinking.[m
+         </p>[m
+         <div class="education-grid">[m
+           <article class="card">[m
+[36m@@ -164,12 +164,12 @@[m
+           <article class="card">[m
+             <h3>Bachelor&apos;s Degree in Physics</h3>[m
+             <p>[m
+[31m-              Planned academic path focused on physics, mathematics, scientific modeling and a focus of interest[m
+[31m-              in applied physics, electronics, instrumentation and computational physics.[m
+[32m+[m[32m              Academic path focused on physics, mathematics, scientific modeling and applied interests in[m
+[32m+[m[32m              electronics, instrumentation and computational physics.[m
+             </p>[m
+[31m-            <p><strong>Status:</strong> Planned / Incoming Student</p>[m
+[32m+[m[32m            <p><strong>Status:</strong> Currently pursuing a Bachelor's Degree in Physics</p>[m
+             <p>[m
+[31m-              The planned Physics path is aligned with embedded firmware engineering through topics such as[m
+[32m+[m[32m              This Physics path is aligned with embedded firmware engineering through topics such as[m
+               electromagnetism, semiconductor physics, electronic instrumentation, analog electronics, digital[m
+               electronics, programming, mathematical modeling and scientific computing.[m
+             </p>[m
+[36m@@ -225,7 +225,7 @@[m
+             </p>[m
+             <p><strong>Technologies:</strong> C++, Linux, CMake, QEMU, Embedded Workflows</p>[m
+             <p><strong>Status:</strong> In Development</p>[m
+[31m-            <a class="btn btn-outline" href="#">View Repository</a>[m
+[32m+[m[32m            <a class="btn btn-outline" href="https://github.com/Anderson-Shinobi" target="_blank" rel="noopener noreferrer">View Repository</a>[m
+           </article>[m
+ [m
+           <article class="card">[m
