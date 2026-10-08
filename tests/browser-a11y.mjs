@@ -62,6 +62,20 @@ try {
     assert.deepEqual(errors, [], "Browser JavaScript errors at " + width + "px");
     if (width === 390) {
       const scrollWidth = await page.evaluate(() => document.documentElement.scrollWidth);
+      if (scrollWidth > width) {
+        const offenders = await page.evaluate(() => [...document.querySelectorAll("body *")]
+          .map(el => ({ el, rect: el.getBoundingClientRect() }))
+          .filter(({ rect }) => rect.right > innerWidth + 1 || rect.left < -1)
+          .slice(0, 12)
+          .map(({ el, rect }) => ({
+            element: el.tagName.toLowerCase(),
+            className: typeof el.className === "string" ? el.className : "",
+            left: Math.round(rect.left),
+            right: Math.round(rect.right),
+            scrollWidth: el.scrollWidth
+          })));
+        console.error("MOBILE_OVERFLOW_ELEMENTS=" + JSON.stringify(offenders));
+      }
       assert.ok(scrollWidth <= width, "Mobile horizontal overflow " + scrollWidth + "px");
     }
     await context.close();
