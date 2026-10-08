@@ -2,7 +2,7 @@
   "name": "shinobi-embedded-portfolio",
   "version": "2.1.0",
   "private": true,
-  "type": "module",
+  "type": "commonjs",
   "description": "Dependency-free GitHub Pages runtime; Node tooling only for CI/build.",
   "scripts": {
     "lint:html": "htmlhint index.html certifications.html",
