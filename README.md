@@ -110,6 +110,18 @@ The repository integration used to prepare this change cannot modify that settin
 | Browser accessibility | \`npm run test:browser\` | Zero automated WCAG 2.1 AA violations in tested views |
 | Deployment | GitHub Actions \`deploy.yml\` | Success after all required gates |
 
+### Verified Lighthouse baseline (2026-10-08)
+
+The [lab run](https://github.com/Anderson-Shinobi/Anderson-Shinobi.github.io/actions/runs/37857433459) measured the built `dist/` site with simulated Lighthouse conditions (not field data):
+
+| Scenario | Performance | Accessibility | LCP | CLS |
+|---|---:|---:|---:|---:|
+| Homepage mobile | 99 | 100 | 1,802 ms | 0.00 |
+| Homepage desktop | 100 | 100 | 401 ms | 0.00 |
+| Certifications mobile | 100 | 98 | 1,651 ms | 0.00 |
+
+The catalog has a Lighthouse accessibility score of **98** even though the separate axe WCAG 2.1 AA check reported zero detected violations for its tested viewport and language combinations. A passing automated test is not a conformance certificate; investigate the remaining Lighthouse recommendations during the next design review. Scores vary by runner, browser, device and network.
+
 **Measured results:** individual validation results appear in the GitHub Actions run. Per-build JPEG/WebP bytes, compression percentage and minified payload sizes are emitted to \`dist/assets/dist/build-metrics.json\`. No Lighthouse, PageSpeed, TBT, LCP or CLS score is asserted without a real measured run. Automated axe audits do not prove comprehensive WCAG conformance; manual keyboard, zoom, screen-reader and contrast-over-gradient checks remain part of acceptance.
 
 ## Release checklist
