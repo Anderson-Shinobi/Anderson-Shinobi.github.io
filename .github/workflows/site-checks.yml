@@ -1,10 +1,10 @@
-name: Hybrid Lab V2 static checks
+name: Portfolio static checks
 
 on:
   pull_request:
   push:
     branches:
-      - feature/hybrid-lab-v2
+      - 'feature/**'
 
 permissions:
   contents: read
