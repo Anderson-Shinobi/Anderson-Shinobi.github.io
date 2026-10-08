@@ -126,7 +126,7 @@ a:focus-visible,button:focus-visible { outline: 2px solid var(--cyan); outline-o
 .text-link {display:inline-flex;gap:.55rem;align-items:center;white-space:normal;font-weight:700;font-size:.87rem;color:#c4b6ff;text-decoration:none;border-bottom:1px solid rgba(174,157,251,.45);padding-bottom:.3rem;}
 .text-link:hover {color:#fff;border-color:#fff;}
 .project-filters {display:flex;gap:.55rem;flex-wrap:wrap;margin-bottom:1.4rem;}
-.filter-button {cursor:pointer;border:1px solid #303d55;background:transparent;color:#acb9ce;border-radius:8px;font:600 .79rem/1.1 inherit;padding:.65rem 1rem;}
+.filter-button {cursor:pointer;border:1px solid #303d55;background:transparent;color:#acb9ce;border-radius:8px;font-size:.79rem;font-family:inherit;font-weight:600;line-height:1.1;padding:.65rem 1rem;}
 .filter-button:hover,.filter-button:focus-visible {border-color:#7a6ec0;color:#fff;}
 .filter-button.active {background:rgba(128,94,228,.2);border-color:#947cdd;color:#f3efff;}
 .project-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem;}
