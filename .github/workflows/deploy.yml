@@ -54,7 +54,7 @@ jobs:
         run: npm run test:links
 
       - name: Install browser for WCAG audit
-        run: npx playwright install --with-deps chromium
+        run: npx playwright install chromium
 
       - name: Test mobile and desktop with axe WCAG 2.1 AA
         run: npm run test:browser
