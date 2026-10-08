@@ -106,6 +106,8 @@
 .project-link span[aria-hidden],
 .btn span[aria-hidden] { flex-shrink: 0; }
 
+.site-footer a { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .2em; }
+
 /* Prefer compositor-friendly opacity/transform transitions for visual motion. */
 .signal-trace {
   stroke: #a8ebf4;
