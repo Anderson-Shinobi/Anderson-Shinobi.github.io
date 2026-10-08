@@ -48,20 +48,35 @@
 
   const filters = Array.from(document.querySelectorAll(".filter-button[data-filter]"));
   const cards = Array.from(document.querySelectorAll(".project-card[data-category]"));
+  const counter = document.getElementById("project-count");
+
   if (filters.length && cards.length) {
-    filters.forEach(button => {
-      button.addEventListener("click", () => {
-        const selected = button.dataset.filter;
-        filters.forEach(item => {
-          const active = item === button;
-          item.classList.toggle("active", active);
-          item.setAttribute("aria-pressed", String(active));
-        });
-        cards.forEach(card => {
-          const tags = (card.dataset.category || "").split(/\s+/);
-          card.hidden = selected !== "all" && !tags.includes(selected);
-        });
+    // Only categories declared on the buttons may be selected.
+    const validFilters = new Set(filters.map(button => button.dataset.filter));
+
+    function applyFilter(selected) {
+      if (!validFilters.has(selected)) return;
+
+      filters.forEach(button => {
+        const active = button.dataset.filter === selected;
+        button.classList.toggle("active", active);
+        button.setAttribute("aria-pressed", String(active));
       });
+
+      let visible = 0;
+      cards.forEach(card => {
+        const categories = (card.dataset.category || "").trim().split(/\s+/);
+        const show = selected === "all" || categories.includes(selected);
+        // CSS must respect the HTML hidden attribute.
+        card.hidden = !show;
+        if (show) visible += 1;
+      });
+      if (counter) counter.textContent = String(visible);
+    }
+
+    filters.forEach(button => {
+      button.addEventListener("click", () => applyFilter(button.dataset.filter));
     });
+    applyFilter("all");
   }
 })();
