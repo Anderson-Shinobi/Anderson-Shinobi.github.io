@@ -1,0 +1,135 @@
+/* SHINOBI Hybrid Lab — contrast and interaction hardening.
+   Contrast is tested on representative opaque dark surfaces; gradients,
+   image overlays and interaction states also require browser verification. */
+:root {
+  --color-text: #f5f7ff;
+  --color-muted: #d4e1f4;
+  --color-border: #52637d;
+  --cyan: #a6dbe7;
+  --purple: #d5caef;
+  --focus-ring: #9af0f5;
+  --focus-shadow: rgba(9, 14, 24, .96);
+}
+
+/* Improve small type in the hero, contact panel, and footer. */
+.hero-caption,
+.art-toolbar,
+.art-footer,
+.hero-bottom,
+.art-kicker,
+.art-pipeline span,
+.portrait-label,
+.project-topline,
+.project-type,
+.proof-note,
+.contact-panel > small,
+.footer-content,
+.site-footer,
+.brand-sub,
+.expertise-index,
+.project-icon small,
+.project-visual .terminal-title {
+  color: #c7d8ed;
+}
+
+.hero-title,
+.hero h1 em,
+.approach-section h2 em,
+.contact-section h2 em,
+.section-index,
+.project-card h3,
+.project-link,
+.text-link,
+.contact-email,
+.learning-card .eyebrow {
+  color: #ded5ff;
+}
+
+.hero-text,
+.section-lead,
+.workflow-list p,
+.about-content p,
+.project-card-body p,
+.expertise-card p,
+.contact-section p,
+.learning-card p,
+.course-list,
+.catalog-subtitle {
+  color: #d4e1f4;
+}
+
+.primary-nav a,
+.contact-panel > a,
+.project-tags span,
+.chip,
+.skill-pill,
+.filter-button,
+.language-option {
+  color: #d9e5f6;
+}
+
+/* Strong visible focus indicators for mouse-independent navigation. */
+:where(a, button, [tabindex]):focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 6px var(--focus-shadow);
+}
+:where(a, button):hover:not([disabled]) {
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+.text-link:hover,
+.project-link:hover,
+.contact-email:hover,
+.contact-panel > a:hover,
+.footer-content a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.filter-button.active,
+.filter-button[aria-pressed="true"],
+.language-option.active,
+.language-option[aria-pressed="true"] {
+  background-color: #5e448f;
+  color: #f5f7ff;
+  border-color: #c9baf6;
+}
+.filter-button:hover,
+.language-option:hover,
+.nav-toggle:hover,
+.btn-outline:hover {
+  border-color: #bba7f7;
+  color: #fff;
+  background-color: #30385e;
+}
+.nav-toggle { min-width: 44px; min-height: 44px; }
+.project-link span[aria-hidden],
+.btn span[aria-hidden] { flex-shrink: 0; }
+
+.site-footer a { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .2em; }
+
+/* Prefer compositor-friendly opacity/transform transitions for visual motion. */
+.signal-trace {
+  stroke: #a8ebf4;
+  stroke-dasharray: 95 26;
+  animation: signal-sweep 8s linear infinite;
+}
+.signal-line circle { animation: signal-glow 5s ease-in-out infinite; }
+@keyframes signal-sweep {
+  to { stroke-dashoffset: -121; }
+}
+@keyframes signal-glow {
+  0%, 100% { opacity: .5; }
+  50% { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .signal-trace,
+  .signal-line circle { animation: none !important; }
+}
+@media (forced-colors: active) {
+  :where(a, button, [tabindex]):focus-visible {
+    outline: 3px solid Highlight;
+    box-shadow: none;
+  }
+  .filter-button.active, .language-option.active { outline: 1px solid CanvasText; }
+}

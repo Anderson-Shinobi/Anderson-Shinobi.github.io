@@ -1,0 +1,26 @@
+{
+  "name": "shinobi-embedded-portfolio",
+  "version": "2.1.0",
+  "private": true,
+  "type": "commonjs",
+  "description": "Dependency-free GitHub Pages runtime; Node tooling only for CI/build.",
+  "scripts": {
+    "lint:html": "htmlhint index.html certifications.html",
+    "lint:css": "stylelint \"style.css\" \"hybrid-v2.css\" \"assets/css/**/*.css\"",
+    "lint": "npm run lint:html && npm run lint:css",
+    "test:smoke": "python3 -m unittest discover -s tests -p test_site.py -v",
+    "test:i18n": "node tests/test_i18n.js",
+    "test:contrast": "node scripts/check-contrast.mjs",
+    "test:browser": "node tests/browser-a11y.mjs",
+    "build": "node scripts/build.mjs",
+    "test:links": "node scripts/check-links.mjs",
+    "verify": "npm run lint && npm run test:smoke && npm run test:i18n && npm run test:contrast && npm run build && npm run test:links"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "esbuild": "0.28.2",
+    "htmlhint": "1.9.2",
+    "playwright": "1.63.0",
+    "stylelint": "17.16.0"
+  }
+}

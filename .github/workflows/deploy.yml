@@ -1,0 +1,89 @@
+name: Shinobi — Quality Gate and GitHub Pages
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify-and-build:
+    name: Lint · Test · Optimize · Audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install pinned build dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Validate HTMLHint and Stylelint
+        run: npm run lint
+
+      - name: Validate JavaScript and bilingual behavior
+        run: |
+          node --check script.js
+          node --check i18n.js
+          npm run test:i18n
+
+      - name: Static links, anchors and critical contrast samples
+        run: |
+          npm run test:smoke
+          npm run test:contrast
+
+      - name: Install WebP encoder
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y webp
+
+      - name: Minify and convert profile image to WebP
+        run: npm run build
+
+      - name: Validate deployment artifact links and images
+        run: npm run test:links
+
+      - name: Install browser for WCAG audit
+        run: npx playwright install chromium
+
+      - name: Test mobile and desktop with axe WCAG 2.1 AA
+        run: npm run test:browser
+
+      # Only production builds are published. PRs always run quality checks.
+      # One-time repository setup: Settings > Pages > Source > GitHub Actions.
+      - name: Configure Pages
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/configure-pages@v5
+
+      - name: Upload verified site artifact
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+  deploy:
+    name: Publish after successful verification
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: verify-and-build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.publish.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: publish
+        uses: actions/deploy-pages@v4

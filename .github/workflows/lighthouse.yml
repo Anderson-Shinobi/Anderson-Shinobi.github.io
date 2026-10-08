@@ -1,0 +1,55 @@
+name: Lighthouse — laboratory performance audit
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install locked tooling and WebP converter
+        run: |
+          npm ci --no-audit --no-fund
+          sudo apt-get update
+          sudo apt-get install -y webp
+
+      - name: Create production-equivalent static build
+        run: npm run build
+
+      - name: Install Chrome
+        run: npx playwright install chromium
+
+      - name: Run mobile and desktop Lighthouse
+        run: |
+          mkdir -p lighthouse
+          export CHROME_PATH="$(node -e "process.stdout.write(require('playwright').chromium.executablePath())")"
+          python3 -m http.server 8765 --directory dist --bind 127.0.0.1 > lighthouse/server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          sleep 3
+          npm exec --yes --package lighthouse@12.8.2 -- lighthouse http://127.0.0.1:8765/index.html --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage" --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=lighthouse/home-mobile.json --quiet
+          npm exec --yes --package lighthouse@12.8.2 -- lighthouse http://127.0.0.1:8765/index.html --preset=desktop --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage" --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=lighthouse/home-desktop.json --quiet
+          npm exec --yes --package lighthouse@12.8.2 -- lighthouse http://127.0.0.1:8765/certifications.html --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage" --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=lighthouse/catalog-mobile.json --quiet
+
+      - name: Summarize metrics
+        run: node scripts/summarize-lighthouse.mjs lighthouse/home-mobile.json lighthouse/home-desktop.json lighthouse/catalog-mobile.json
+
+      - name: Upload raw reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-lab-reports
+          path: lighthouse/
+          if-no-files-found: warn
+          retention-days: 14
