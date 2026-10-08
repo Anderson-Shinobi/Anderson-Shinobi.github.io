@@ -34,7 +34,7 @@ def parse(page):
 
 class PortfolioSmokeTests(unittest.TestCase):
     def test_required_files(self):
-        for name in (*PAGES, "style.css", "hybrid-v2.css", "script.js", "assets/images/profile.jpg"):
+        for name in (*PAGES, "style.css", "hybrid-v2.css", "script.js", "i18n.js", "assets/images/profile.jpg"):
             with self.subTest(path=name):
                 self.assertTrue((ROOT / name).is_file(), f"Missing {name}")
 
