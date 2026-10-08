@@ -1,0 +1,51 @@
+/* Hybrid Lab V2 — progressive visual enhancement over existing style.css */
+:root {
+  --color-bg: #080b12;
+  --color-surface: #111827;
+  --color-card: #121a28;
+  --color-primary: #6439c9;
+  --color-primary-soft: #9b78ff;
+  --color-primary-glow: rgba(137, 96, 255, .2);
+  --color-border: #2a3548;
+  --color-muted: #b8c4d5;
+  --color-text: #f1f5ff;
+  --container-width: 1180px;
+}
+html { scroll-padding-top: 92px; }
+body {
+  background: radial-gradient(circle at 88% 1%, rgba(91, 56, 164, .18), transparent 32%),
+              radial-gradient(circle at 5% 31%, rgba(24, 185, 199, .07), transparent 30%), #080b12;
+}
+.site-header { background: rgba(8, 11, 18, .92); border-bottom: 1px solid rgba(152,169,202,.18); }
+.logo-icon { border-radius: 12px; color: #bdacff; }
+.brand-sub { letter-spacing: .01em; }
+.hero { position: relative; overflow: hidden; }
+.hero::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .35;
+  background-image: linear-gradient(rgba(108,126,160,.08) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(108,126,160,.08) 1px, transparent 1px);
+  background-size: 44px 44px; mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+.hero > .container { position: relative; z-index: 1; }
+.hero-greeting { color: #66d5e0; text-transform: uppercase; font-size: .83rem; letter-spacing: .18em; font-weight: 700; }
+.hero h1 { letter-spacing: -.045em; font-weight: 800; }
+.hero-title { color: #bba7ff; }
+.hero-text { font-size: 1.05rem; max-width: 660px; }
+.btn-primary { background: linear-gradient(125deg, #5d35bd, #8756e8); border-color: #9771fb; box-shadow: 0 8px 25px rgba(94,57,188,.22); }
+.btn:focus-visible, .nav-toggle:focus-visible, a:focus-visible { outline: 2px solid #69dce7; outline-offset: 3px; }
+.card, .manifesto-card {
+  background: linear-gradient(155deg, rgba(25,34,52,.92), rgba(12,18,31,.96));
+  border: 1px solid rgba(139,157,195,.2);
+  box-shadow: 0 8px 30px rgba(0,0,0,.1);
+}
+.project-grid .card { position: relative; overflow: hidden; }
+.project-grid .card::before { content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 3px; background: linear-gradient(90deg,#8560e8,#46b7c2); }
+.project-grid .card h3 { color: #dfd6ff; }
+.chip,.skill-pill { background: rgba(24,34,52,.75); border-color: #35415a; }
+.section h2 { letter-spacing: -.025em; }
+.section h2::before { content: '// '; color: #63c8d6; font-size: .77em; }
+.profile-image { border-color: #8769f1; box-shadow: 0 0 0 6px rgba(116,87,223,.12), 0 0 60px rgba(116,87,223,.22); }
+.site-footer { background: #080b12; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}
