@@ -133,3 +133,18 @@
   }
   .filter-button.active, .language-option.active { outline: 1px solid CanvasText; }
 }
+
+/* Filter state stays visible and updates in both site languages. */
+.project-filters { margin-bottom: .55rem; }
+.filter-summary {
+  display: flex;
+  align-items: baseline;
+  gap: .4rem;
+  margin: 0 0 1rem;
+  color: #c7d8ed;
+  font-size: .82rem;
+  font-variant-numeric: tabular-nums;
+}
+.filter-summary output { color: #f5f7ff; font-weight: 700; }
+html[lang="en"] .filter-summary-pt,
+html[lang="pt-BR"] .filter-summary-en { display: none; }

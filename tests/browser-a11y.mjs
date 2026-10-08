@@ -47,6 +47,35 @@ try {
       for (const language of ["en", "pt-BR"]) {
         await page.locator('.language-switch [data-language="' + language + '"]').click();
         assert.equal(await page.locator("html").getAttribute("lang"), language);
+
+        if (pageName === "index.html") {
+          // End-to-end regression: pointer and keyboard must both filter real cards.
+          const expected = {
+            all: ["C++ Embedded Telemetry Lab", "Renode C# Peripheral Lab", "qKAGE Home Supply", "Linux Mint USB Prep"],
+            firmware: ["C++ Embedded Telemetry Lab"],
+            simulation: ["C++ Embedded Telemetry Lab", "Renode C# Peripheral Lab"],
+            tools: ["qKAGE Home Supply", "Linux Mint USB Prep"]
+          };
+          for (const [category, titles] of Object.entries(expected)) {
+            const button = page.locator('.filter-button[data-filter="' + category + '"]');
+            await button.click();
+            assert.equal(await button.getAttribute("aria-pressed"), "true", category + " pressed state");
+            assert.equal(await button.getAttribute("aria-controls"), "project-grid");
+            assert.deepEqual(await page.locator(".project-card:not([hidden]) h3").allTextContents(), titles, category + " visible cards");
+            assert.equal(await page.locator(".project-card[hidden]").count(), 4 - titles.length, category + " hidden cards");
+            assert.equal((await page.locator("#project-count").textContent()).trim(), String(titles.length));
+          }
+          const firmware = page.locator('.filter-button[data-filter="firmware"]');
+          await firmware.focus();
+          await page.keyboard.press("Enter");
+          assert.equal(await firmware.getAttribute("aria-pressed"), "true", "Keyboard activation");
+          assert.equal(await page.locator(".project-card:not([hidden])").count(), 1);
+          await page.locator('.filter-button[data-filter="all"]').click();
+          assert.equal(await page.locator(".project-card:not([hidden])").count(), 4);
+          assert.equal(await page.locator(".filter-summary-en").isVisible(), language === "en");
+          assert.equal(await page.locator(".filter-summary-pt").isVisible(), language === "pt-BR");
+        }
+
         const results = await new AxeBuilder({ page })
           .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
           .analyze();

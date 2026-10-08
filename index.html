@@ -82,12 +82,17 @@
           <a class="text-link" href="https://github.com/Anderson-Shinobi?tab=repositories" target="_blank" rel="noopener noreferrer">All repositories <span aria-hidden="true">↗</span></a>
         </div>
         <div class="project-filters" role="group" aria-label="Filter featured projects">
-          <button type="button" class="filter-button active" data-filter="all" aria-pressed="true">All work</button>
-          <button type="button" class="filter-button" data-filter="firmware" aria-pressed="false">Firmware</button>
-          <button type="button" class="filter-button" data-filter="simulation" aria-pressed="false">Simulation</button>
-          <button type="button" class="filter-button" data-filter="tools" aria-pressed="false">Tools &amp; Linux</button>
+          <button type="button" class="filter-button active" data-filter="all" aria-controls="project-grid" aria-pressed="true">All work</button>
+          <button type="button" class="filter-button" data-filter="firmware" aria-controls="project-grid" aria-pressed="false">Firmware</button>
+          <button type="button" class="filter-button" data-filter="simulation" aria-controls="project-grid" aria-pressed="false">Simulation</button>
+          <button type="button" class="filter-button" data-filter="tools" aria-controls="project-grid" aria-pressed="false">Tools &amp; Linux</button>
         </div>
-        <div class="project-grid">
+        <div class="filter-summary" role="status" aria-live="polite" aria-atomic="true">
+          <span class="filter-summary-en" lang="en">Visible projects:</span>
+          <span class="filter-summary-pt" lang="pt-BR">Projetos exibidos:</span>
+          <output id="project-count">4</output>
+        </div>
+        <div id="project-grid" class="project-grid">
           <article class="project-card card project-featured" data-category="firmware simulation">
             <div class="project-topline"><span>FEATURED / 001</span><span class="project-type">EMBEDDED TELEMETRY</span></div>
             <div class="project-visual telemetry-visual" aria-hidden="true"><div class="terminal-title">PROTOCOL / V1 <span>● CRC-32</span></div><div class="terminal-frames"><span>TLFRAME · 34 BYTE FRAME</span><span>0x544C &nbsp;→&nbsp; SEQUENCE &nbsp;→&nbsp; CRC32</span><span class="terminal-ok">VALIDATION: DOCUMENTED PASS</span></div><div class="terminal-meter"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
@@ -100,7 +105,7 @@
               <a class="project-link" href="https://github.com/Anderson-Shinobi/cpp-embedded-telemetry-lab" target="_blank" rel="noopener noreferrer">Explore source &amp; evidence <span aria-hidden="true">↗</span></a>
             </div>
           </article>
-          <article class="project-card card" data-category="simulation firmware">
+          <article class="project-card card" data-category="simulation">
             <div class="project-topline"><span>LAB / 002</span><span class="project-type">HARDWARE SIMULATION</span></div>
             <div class="project-icon" aria-hidden="true"><span>{ }</span><small>0x40000000 · MMIO</small></div>
             <div class="project-card-body"><h3>Renode C# Peripheral Lab</h3><p>Authorial memory-mapped peripheral model with CONTROL, STATUS and DATA registers, SystemBus integration and automated Robot Framework validation.</p><div class="project-tags"><span>Renode</span><span>C#</span><span>MMIO</span></div><a class="project-link" href="https://github.com/Anderson-Shinobi/renode-csharp-peripheral-lab" target="_blank" rel="noopener noreferrer">Explore model &amp; tests <span aria-hidden="true">↗</span></a></div>
