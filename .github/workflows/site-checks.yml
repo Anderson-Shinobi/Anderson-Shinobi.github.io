@@ -20,5 +20,7 @@ jobs:
         run: node --check i18n.js
       - name: Test bilingual language switching
         run: node tests/test_i18n.js
+      - name: Validate Wokwi project diagram and firmware invariants
+        run: node tests/test_wokwi_lab.cjs
       - name: Validate local assets, navigation anchors and filter markup
         run: python3 -m unittest discover -s tests -p 'test_site.py' -v

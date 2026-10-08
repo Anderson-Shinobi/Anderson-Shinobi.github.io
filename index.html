@@ -35,6 +35,7 @@
       </button>
       <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
         <a href="#projects">Projects</a>
+        <a href="#interactive-lab">Lab</a>
         <a href="#approach">Approach</a>
         <a href="#stack">Expertise</a>
         <a href="#about">About</a>
@@ -120,6 +121,46 @@
             <div class="project-icon project-icon-cyan" aria-hidden="true"><span>$ _</span><small>SAFE WORKFLOWS</small></div>
             <div class="project-card-body"><h3>Linux Mint USB Prep</h3><p>Shell-based utility for safely preparing USB drives for Linux Mint installation, with a focus on predictable system operations.</p><div class="project-tags"><span>Bash</span><span>Linux Mint</span><span>CLI</span></div><a class="project-link" href="https://github.com/Anderson-Shinobi/linux-mint-usb-prep" target="_blank" rel="noopener noreferrer">Explore utility <span aria-hidden="true">↗</span></a></div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section interactive-lab-section" id="interactive-lab" aria-labelledby="interactive-lab-heading">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow section-index">INTERACTIVE LAB / 001</p>
+            <h2 id="interactive-lab-heading">From source to waveform<span class="hero-dot">.</span></h2>
+            <p class="section-lead">Explore a reproducible AVR project with source code, circuit wiring and testable hardware behavior.</p>
+          </div>
+          <span class="lab-availability">SOURCE READY · LIVE DEMO PENDING</span>
+        </div>
+        <div class="lab-showcase">
+          <div class="lab-schematic" aria-hidden="true">
+            <div class="lab-schematic-top"><span>SHINOBI / WOKWI LAB</span><span>ATmega328P · 16 MHz</span></div>
+            <svg viewBox="0 0 540 170" focusable="false" aria-hidden="true" class="lab-signal" preserveAspectRatio="xMidYMid meet">
+              <path d="M0 140H540 M0 90H540 M0 40H540" class="lab-grid"/>
+              <path d="M8 140V40H28V140H48V40H68V140H88V40H108V140H128V40H148V140H168V40H188V140H208V40H228V140H248V40H268V140H288V40H308V140H328V40H348V140H368V40H388V140H408V40H428V140H448V40H468V140H488V40H508V140H528" class="lab-trace"/>
+            </svg>
+            <div class="lab-schematic-bottom"><span>OC1A / D9 · TIMER1 PWM</span><span>ILLUSTRATIVE · NOT A CAPTURE</span></div>
+          </div>
+          <div class="lab-description">
+            <p class="eyebrow">AVR · UNO R3 · REGISTER LEVEL</p>
+            <h3>GPIO + hardware PWM on Timer1</h3>
+            <p>Control an LED through OC1A/D9, toggle the onboard D13 LED, and examine serial messages and logic-analyzer connections — without Arduino HAL calls.</p>
+            <div class="lab-facts">
+              <span>976.56 Hz PWM</span>
+              <span>10% · 50% · 90% duty</span>
+              <span>UART 9600 bps</span>
+              <span>VCD-ready wiring</span>
+            </div>
+            <div class="lab-actions">
+              <a class="btn btn-primary" href="https://github.com/Anderson-Shinobi/Anderson-Shinobi.github.io/tree/main/labs/wokwi/uno-baremetal-pwm" target="_blank" rel="noopener noreferrer">View firmware and circuit <span aria-hidden="true">↗</span></a>
+              <a class="btn btn-outline" href="https://github.com/Anderson-Shinobi/Anderson-Shinobi.github.io/blob/main/labs/wokwi/uno-baremetal-pwm/README.md" target="_blank" rel="noopener noreferrer">Simulation instructions <span aria-hidden="true">↗</span></a>
+            </div>
+            <p class="lab-secondary-link"><a href="https://wokwi.com/projects/new/arduino-uno" target="_blank" rel="noopener noreferrer">Open a new Wokwi Arduino Uno editor <span aria-hidden="true">↗</span></a></p>
+            <p class="lab-note">Online simulation is not published yet. Import the two source files into Wokwi to run it; results remain to be validated.</p>
+          </div>
         </div>
       </div>
     </section>

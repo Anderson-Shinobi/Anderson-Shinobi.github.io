@@ -6,6 +6,22 @@
 
   const STORAGE_KEY = "shinobi-portfolio-language";
   const PT = {
+    "INTERACTIVE LAB / 001": "LABORATÓRIO INTERATIVO / 001",
+    "From source to waveform": "Do código ao sinal",
+    "Explore a reproducible AVR project with source code, circuit wiring and testable hardware behavior.": "Explore um projeto AVR reproduzível com código-fonte, conexões do circuito e comportamento de hardware verificável.",
+    "SOURCE READY · LIVE DEMO PENDING": "CÓDIGO DISPONÍVEL · DEMO PENDENTE",
+    "SHINOBI / WOKWI LAB": "SHINOBI / LAB WOKWI",
+    "ILLUSTRATIVE · NOT A CAPTURE": "ILUSTRATIVO · NÃO É UMA CAPTURA",
+    "AVR · UNO R3 · REGISTER LEVEL": "AVR · UNO R3 · REGISTRADORES",
+    "GPIO + hardware PWM on Timer1": "GPIO + PWM por hardware no Timer1",
+    "Control an LED through OC1A/D9, toggle the onboard D13 LED, and examine serial messages and logic-analyzer connections — without Arduino HAL calls.": "Controle um LED pelo pino OC1A/D9, alterne o LED integrado D13 e examine as mensagens seriais e conexões do analisador lógico — sem usar funções da HAL do Arduino.",
+    "10% · 50% · 90% duty": "Duty cycle de 10% · 50% · 90%",
+    "UART 9600 bps": "UART 9600 bps",
+    "VCD-ready wiring": "Conexões prontas para VCD",
+    "View firmware and circuit": "Ver firmware e circuito",
+    "Simulation instructions": "Instruções para simular",
+    "Open a new Wokwi Arduino Uno editor": "Abrir novo editor Arduino Uno no Wokwi",
+    "Online simulation is not published yet. Import the two source files into Wokwi to run it; results remain to be validated.": "A simulação online ainda não foi publicada. Importe os dois arquivos no Wokwi para executá-la; os resultados ainda precisam ser validados.",
   "Skip to content": "Pular para o conteúdo",
   "EMBEDDED ENGINEERING / PORTFOLIO": "ENGENHARIA EMBARCADA / PORTFÓLIO",
   "Projects": "Projetos",
