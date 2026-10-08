@@ -53,3 +53,44 @@ Final URL:
 ## License
 
 Personal portfolio project.
+
+
+## Hybrid Lab V2 (in review)
+
+V2 is developed on the \`feature/hybrid-lab-v2\` branch to avoid changes to the published \`main\` site before review.
+
+### What's new
+
+- New responsive homepage focused on validated engineering work.
+- Featured evidence from \`cpp-embedded-telemetry-lab\`, Renode C# peripheral modeling, Qt/Linux applications and system tools.
+- Dark graphite design, subtle engineering/HUD visual language, mobile navigation and accessible client-side project filters.
+- Existing training catalog retained and visually aligned.
+- Static smoke checks for local links, IDs, required assets, JS syntax and the absence of enabled visitor tracking.
+
+### Review on a smartphone
+
+The V2 source files can be reviewed on this branch in GitHub. A temporary external HTML preview may also be used; it is **not** the published GitHub Pages URL and is not a production hosting service.
+
+### Local preview & validation
+
+\`\`\`sh
+python3 -m http.server 8000
+# In another terminal:
+python3 -m unittest discover -s tests -p 'test_site.py' -v
+node --check script.js
+\`\`\`
+
+Open \`http://localhost:8000/\`.
+
+### Publishing checklist
+
+1. Review the V2 preview at mobile and desktop widths.
+2. Confirm all project descriptions and public links.
+3. Review the pull request and GitHub Actions checks.
+4. Merge into \`main\` only after explicit approval.
+5. Monitor Pages deployment before considering the release complete.
+
+### Visitor telemetry
+
+No analytics or Telegram bot requests are embedded in the site.
+\`TELEMETRY_DESIGN.md\` documents a **future** privacy-aware integration; bot secrets must never enter this public repository.

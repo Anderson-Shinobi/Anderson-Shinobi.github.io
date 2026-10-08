@@ -1,316 +1,156 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Anderson Nogueira - Embedded Firmware Developer. Portfolio focused on C/C++, Linux, Qt, STM32, ESP32 and embedded systems engineering projects."
-  />
-  <meta
-    name="keywords"
-    content="Embedded Firmware, Embedded Systems, STM32, ESP32, Linux, Qt, C++, Firmware Engineering"
-  />
-  <meta name="author" content="Anderson Nogueira" />
-  <meta property="og:title" content="Anderson Nogueira | Embedded Firmware Portfolio" />
-  <meta
-    property="og:description"
-    content="Embedded firmware portfolio focused on Embedded Systems, STM32, ESP32, Linux, Qt and C++ engineering workflows."
-  />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://anderson-shinobi.github.io/" />
-  <meta property="og:image" content="https://anderson-shinobi.github.io/assets/images/profile.jpg" />
-  <link rel="icon" href="assets/images/profile.jpg" />
-  <link rel="shortcut icon" href="assets/images/profile.jpg" />
-  <link rel="apple-touch-icon" href="assets/images/profile.jpg" />
-  <title>Anderson Nogueira | Embedded Firmware Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0e17">
+  <meta name="description" content="Anderson Nogueira — Embedded Firmware Developer. C/C++, bare-metal, ARM Cortex-M, Zephyr, Renode, electronics diagnostics and verifiable engineering laboratories.">
+  <meta name="author" content="Anderson Nogueira">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Anderson Nogueira — Embedded Firmware Engineering">
+  <meta property="og:description" content="From physics to firmware. Explore tested embedded systems, Renode simulations, C++ telemetry and Linux engineering tools.">
+  <meta property="og:url" content="https://anderson-shinobi.github.io/">
+  <meta property="og:image" content="https://anderson-shinobi.github.io/assets/images/profile.jpg">
+  <link rel="icon" href="assets/images/profile.jpg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="hybrid-v2.css">
+  <title>Anderson Nogueira | Embedded Firmware Engineer — Portfolio</title>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Anderson Nogueira","url":"https://anderson-shinobi.github.io/","jobTitle":"Embedded Firmware Developer","sameAs":["https://github.com/Anderson-Shinobi","https://www.linkedin.com/in/anderson-cpp"],"knowsAbout":["Embedded Systems","C","C++","Renode","Zephyr RTOS","STM32","Linux"]}
+  </script>
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#home">Skip to content</a>
-
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header">
     <div class="container nav-wrap">
-      <a href="#home" class="brand" aria-label="Go to home">
-        <span class="logo-icon">&lt;/&gt;</span>
-        <span>
-          <span class="brand-main">Anderson Nogueira</span>
-          <span class="brand-sub">C/C++ • Linux • Qt • STM32 • ESP32 • Embedded Systems</span>
-        </span>
+      <a class="brand" href="#home" aria-label="Anderson Nogueira — back to top">
+        <span class="logo-icon" aria-hidden="true">A<span class="brand-cursor">_</span></span>
+        <span class="brand-label"><span class="brand-main">ANDERSON <span>NOGUEIRA</span></span><span class="brand-sub">EMBEDDED ENGINEERING / PORTFOLIO</span></span>
       </a>
-
-      <button
-        class="nav-toggle"
-        aria-expanded="false"
-        aria-controls="primary-nav"
-        aria-label="Toggle navigation"
-      >
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">
         <span></span><span></span><span></span>
       </button>
-
-      <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#stack">Stack</a>
+      <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
         <a href="#projects">Projects</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#contact">Contact</a>
+        <a href="#approach">Approach</a>
+        <a href="#stack">Expertise</a>
+        <a href="#about">About</a>
+        <a class="nav-contact" href="#contact">Let's connect <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </header>
 
-  <main id="home">
-    <section class="hero section">
+  <main id="main-content">
+    <section class="hero section" id="home" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="hero-greeting">Hello, I'm</p>
-          <h1>Anderson Nogueira</h1>
-          <p class="hero-title">Embedded Firmware Developer</p>
-          <p class="hero-text">
-            I build practical embedded systems, firmware workflows and Linux-based engineering tools, combining
-            hardware diagnostics, C/C++, Qt, STM32, ESP32 and AI-assisted engineering.
-          </p>
+          <p class="eyebrow"><span class="eyebrow-rule"></span> ELECTRONICS · FIRMWARE · SIMULATION</p>
+          <h1 id="hero-title">Engineering<br><em>what's beneath</em><br>the surface<span class="hero-dot">.</span></h1>
+          <p class="hero-title">Anderson Nogueira <span aria-hidden="true">/</span> Embedded Firmware Developer</p>
+          <p class="hero-text">I build and validate embedded software where hardware behavior matters — from low-level C/C++ and peripherals to automated simulation, telemetry and Linux engineering tools.</p>
           <div class="cta-group">
-            <a class="btn btn-primary" href="https://github.com/Anderson-Shinobi" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a class="btn btn-outline" href="https://www.linkedin.com/in/anderson-cpp" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a class="btn btn-outline" href="certifications.html">View Certifications</a>
+            <a class="btn btn-primary" href="#projects">Explore engineering work <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-outline" href="https://github.com/Anderson-Shinobi" target="_blank" rel="noopener noreferrer">View GitHub <span aria-hidden="true">↗</span></a>
           </div>
-          <div class="hero-skills" role="list" aria-label="Core skills">
-            <span class="skill-pill" role="listitem">C++</span>
-            <span class="skill-pill" role="listitem">C</span>
-            <span class="skill-pill" role="listitem">Linux</span>
-            <span class="skill-pill" role="listitem">Embedded</span>
-            <span class="skill-pill" role="listitem">Qt</span>
-            <span class="skill-pill" role="listitem">STM32</span>
+          <p class="hero-caption">REAL PROJECTS <span aria-hidden="true">/</span> TRACEABLE RESULTS <span aria-hidden="true">/</span> NO STOCK METRICS</p>
+        </div>
+        <div class="hero-art" aria-label="Engineering workflow illustration, not live device telemetry">
+          <div class="art-toolbar"><span><i></i><i></i><i></i></span><small>LAB / ENGINEERING WORKFLOW</small><span>01—04</span></div>
+          <div class="art-intro"><p class="art-kicker">SHINOBI / BUILD SYSTEMS THAT CAN BE VERIFIED</p><div class="art-heading">FROM SIGNAL<br><span>TO SYSTEM.</span></div></div>
+          <div class="signal-line" aria-hidden="true"><svg viewBox="0 0 480 90" role="img" aria-label="Decorative schematic signal"><path class="signal-base" d="M0 52H480"/><path class="signal-trace" d="M0 52 H40 V52 H62 V16 H99 V52 H151 V72 H199 V52 H245 V30 H270 V52 H312 V10 H350 V52 H398 V62 H436 V52 H480"/><circle cx="312" cy="10" r="4"/><circle cx="199" cy="52" r="3"/></svg></div>
+          <div class="art-pipeline">
+            <span>01 <b>HARDWARE</b></span><span>02 <b>FIRMWARE</b></span><span>03 <b>SIMULATE</b></span><span>04 <b>VALIDATE</b></span>
           </div>
-        </div>
-
-        <div class="hero-image-wrap">
-          <img
-            class="profile-image"
-            src="assets/images/profile.jpg"
-            alt="Professional profile portrait of Anderson Nogueira"
-          />
+          <div class="art-footer"><span>MODELS + MEASUREMENTS</span><span>ENGINEERING, NOT GUESSWORK</span></div>
         </div>
       </div>
+      <div class="container hero-bottom"><span>SCROLL TO INVESTIGATE</span><span class="hero-swipe" aria-hidden="true">↓</span><span>SHINOBI ENGINEERING LAB</span></div>
     </section>
 
-    <section id="about" class="section">
-      <div class="container about-grid">
-        <article class="card">
-          <h2>About Me</h2>
-          <p>
-            I am an Embedded Firmware Developer with a background in electronics, software development,
-            Linux-based tooling and embedded systems engineering. My work includes PCB analysis, electronic
-            diagnostics, Qt/C++ applications, firmware workflow design and technical documentation.
-          </p>
-          <p>
-            I focus on building reliable, maintainable and well-documented software and firmware projects with
-            practical engineering execution.
-          </p>
-          <a class="btn btn-outline" href="#projects">Learn more about my work</a>
-        </article>
-
-        <article class="card">
-          <h2>Tech Focus</h2>
-          <ul class="focus-list">
-            <li>Firmware Development (C / C++ / Bare-Metal / RTOS)</li>
-            <li>Linux Systems &amp; Embedded Linux</li>
-            <li>Device Drivers &amp; Hardware Interfaces</li>
-            <li>Communication Protocols (UART, I2C, SPI, CAN, MQTT, BLE, LoRa)</li>
-            <li>System Architecture &amp; Technical Documentation</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section id="education" class="section">
+    <section class="section work-section" id="projects" aria-labelledby="projects-heading">
       <div class="container">
-        <h2>Education &amp; Technical Background</h2>
-        <p>
-          My technical path combines electronics, systems development, postgraduate engineering studies and
-          ongoing Physics studies, with emphasis on applied physics, electronics, instrumentation and
-          computational thinking.
-        </p>
-        <div class="education-grid">
-          <article class="card">
-            <h3>Technical Degree in Electronics</h3>
-            <p>
-              Foundational training in electronics, circuits, diagnostics, measurements and practical hardware
-              work.
-            </p>
-            <p><strong>Status:</strong> Completed</p>
-          </article>
-
-          <article class="card">
-            <h3>Associate Degree in Systems Analysis and Development</h3>
-            <p>
-              Academic foundation in software development, systems thinking, programming logic and applied
-              computing.
-            </p>
-            <p><strong>Status:</strong> Completed</p>
-          </article>
-
-          <article class="card">
-            <h3>Postgraduate Studies in Electronics Engineering and Robotics</h3>
-            <p>
-              Advanced studies connected to electronics engineering, robotics, automation and applied embedded
-              systems concepts.
-            </p>
-            <p><strong>Status:</strong> Completed / Academic Background</p>
-          </article>
-
-          <article class="card">
-            <h3>Bachelor’s Degree in Physics</h3>
-            <p>
-              Undergraduate Physics student focused on applied physics, electronics, instrumentation,
-              mathematical modeling and computational physics.
-            </p>
-            <p><strong>Status:</strong> Currently pursuing</p>
-            <p>
-              This Physics path is aligned with embedded firmware engineering through topics such as
-              electromagnetism, semiconductor physics, electronic instrumentation, analog electronics, digital
-              electronics, programming, mathematical modeling and scientific computing.
-            </p>
-          </article>
+        <div class="section-heading">
+          <div><p class="eyebrow section-index">01 / SELECTED WORK</p><h2 id="projects-heading">Proof over promises<span class="hero-dot">.</span></h2><p class="section-lead">Selected public repositories with technical architecture, documented behavior and reproducible engineering work.</p></div>
+          <a class="text-link" href="https://github.com/Anderson-Shinobi?tab=repositories" target="_blank" rel="noopener noreferrer">All repositories <span aria-hidden="true">↗</span></a>
         </div>
-      </div>
-    </section>
-
-    <section id="stack" class="section">
-      <div class="container">
-        <h2>Technical Stack</h2>
-        <div class="stack-grid" role="list" aria-label="Technical stack">
-          <div class="chip" role="listitem">C</div>
-          <div class="chip" role="listitem">C++</div>
-          <div class="chip" role="listitem">Linux</div>
-          <div class="chip" role="listitem">Bash</div>
-          <div class="chip" role="listitem">Qt / Qt Creator</div>
-          <div class="chip" role="listitem">STM32</div>
-          <div class="chip" role="listitem">ESP32</div>
-          <div class="chip" role="listitem">Arduino</div>
-          <div class="chip" role="listitem">Git / GitHub</div>
-          <div class="chip" role="listitem">SQLite</div>
-          <div class="chip" role="listitem">CMake</div>
-          <div class="chip" role="listitem">Embedded Systems</div>
-          <div class="chip" role="listitem">Firmware Documentation</div>
-          <div class="chip" role="listitem">AI-Assisted Engineering</div>
-          <div class="chip" role="listitem">Hardware Diagnostics</div>
-          <div class="chip" role="listitem">Python basics</div>
+        <div class="project-filters" role="group" aria-label="Filter featured projects">
+          <button type="button" class="filter-button active" data-filter="all" aria-pressed="true">All work</button>
+          <button type="button" class="filter-button" data-filter="firmware" aria-pressed="false">Firmware</button>
+          <button type="button" class="filter-button" data-filter="simulation" aria-pressed="false">Simulation</button>
+          <button type="button" class="filter-button" data-filter="tools" aria-pressed="false">Tools &amp; Linux</button>
         </div>
-      </div>
-    </section>
-
-    <section id="projects" class="section">
-      <div class="container">
-        <h2>Projects</h2>
         <div class="project-grid">
-          <article class="card">
-            <h3>qKAGE Home Supply</h3>
-            <p>
-              Linux desktop application built with Qt/C++ for household stock control, consumption tracking,
-              shopping lists, reports and practical domestic organization.
-            </p>
-            <p><strong>Technologies:</strong> Qt, C++17, Linux, CSV, Markdown Reports</p>
-            <p><strong>Status:</strong> Beta / Portfolio Project</p>
-            <a class="btn btn-outline" href="https://github.com/Anderson-Shinobi/qKAGE_HOME_SUPPLY" target="_blank" rel="noopener noreferrer">View Repository</a>
+          <article class="project-card card project-featured" data-category="firmware simulation">
+            <div class="project-topline"><span>FEATURED / 001</span><span class="project-type">EMBEDDED TELEMETRY</span></div>
+            <div class="project-visual telemetry-visual" aria-hidden="true"><div class="terminal-title">PROTOCOL / V1 <span>● CRC-32</span></div><div class="terminal-frames"><span>TLFRAME · 34 BYTE FRAME</span><span>0x544C &nbsp;→&nbsp; SEQUENCE &nbsp;→&nbsp; CRC32</span><span class="terminal-ok">VALIDATION: DOCUMENTED PASS</span></div><div class="terminal-meter"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="project-card-body">
+              <h3>C++ Embedded Telemetry Lab</h3>
+              <p>Portable C++20 binary protocol with host pipeline, Zephyr firmware and Renode Cortex-M4 validation. Deterministic frames, CRC-32 and automated verification.</p>
+              <div class="proof-grid"><div><strong>97/97</strong><span>Host CTest</span></div><div><strong>43/43</strong><span>Zephyr tests</span></div><div><strong>7/7</strong><span>Robot Framework</span></div></div>
+              <p class="proof-note">Results documented in the repository README; not live test telemetry.</p>
+              <div class="project-tags"><span>C++20</span><span>Zephyr</span><span>Renode</span><span>CRC-32</span></div>
+              <a class="project-link" href="https://github.com/Anderson-Shinobi/cpp-embedded-telemetry-lab" target="_blank" rel="noopener noreferrer">Explore source &amp; evidence <span aria-hidden="true">↗</span></a>
+            </div>
           </article>
-
-          <article class="card">
-            <h3>qKAGE Embedded Workbench</h3>
-            <p>
-              Firmware workflow tool to organize embedded project templates, build workflows, smoke tests, QEMU
-              planning, documentation and development discipline.
-            </p>
-            <p><strong>Technologies:</strong> C++, Linux, CMake, QEMU, Embedded Workflows</p>
-            <p><strong>Status:</strong> In Development</p>
-            <a class="btn btn-outline" href="https://github.com/Anderson-Shinobi" target="_blank" rel="noopener noreferrer">View Repository</a>
+          <article class="project-card card" data-category="simulation firmware">
+            <div class="project-topline"><span>LAB / 002</span><span class="project-type">HARDWARE SIMULATION</span></div>
+            <div class="project-icon" aria-hidden="true"><span>{ }</span><small>0x40000000 · MMIO</small></div>
+            <div class="project-card-body"><h3>Renode C# Peripheral Lab</h3><p>Authorial memory-mapped peripheral model with CONTROL, STATUS and DATA registers, SystemBus integration and automated Robot Framework validation.</p><div class="project-tags"><span>Renode</span><span>C#</span><span>MMIO</span></div><a class="project-link" href="https://github.com/Anderson-Shinobi/renode-csharp-peripheral-lab" target="_blank" rel="noopener noreferrer">Explore model &amp; tests <span aria-hidden="true">↗</span></a></div>
           </article>
-
-          <article class="card">
-            <h3>Linux Mint USB Prep</h3>
-            <p>
-              Bash-based utility for Linux USB preparation, system setup and practical maintenance workflows.
-            </p>
-            <p><strong>Technologies:</strong> Bash, Linux Mint, Shell Script</p>
-            <p><strong>Status:</strong> Published / Portfolio Project</p>
-            <a class="btn btn-outline" href="https://github.com/Anderson-Shinobi/linux-mint-usb-prep" target="_blank" rel="noopener noreferrer">View Repository</a>
+          <article class="project-card card" data-category="tools">
+            <div class="project-topline"><span>PRODUCT / 003</span><span class="project-type">LINUX DESKTOP</span></div>
+            <div class="project-icon project-icon-orange" aria-hidden="true"><span>Qt<span class="small-plus">++</span></span><small>LOCAL-FIRST</small></div>
+            <div class="project-card-body"><h3>qKAGE Home Supply</h3><p>Qt6/C++17 household logistics system for stock, procurement, backups and reports. Modular controller/service design and CSV persistence.</p><div class="project-tags"><span>Qt6</span><span>C++17</span><span>CMake</span></div><a class="project-link" href="https://github.com/Anderson-Shinobi/qKAGE_HOME_SUPPLY" target="_blank" rel="noopener noreferrer">Explore application <span aria-hidden="true">↗</span></a></div>
+          </article>
+          <article class="project-card card" data-category="tools">
+            <div class="project-topline"><span>UTILITY / 004</span><span class="project-type">LINUX AUTOMATION</span></div>
+            <div class="project-icon project-icon-cyan" aria-hidden="true"><span>$ _</span><small>SAFE WORKFLOWS</small></div>
+            <div class="project-card-body"><h3>Linux Mint USB Prep</h3><p>Shell-based utility for safely preparing USB drives for Linux Mint installation, with a focus on predictable system operations.</p><div class="project-tags"><span>Bash</span><span>Linux Mint</span><span>CLI</span></div><a class="project-link" href="https://github.com/Anderson-Shinobi/linux-mint-usb-prep" target="_blank" rel="noopener noreferrer">Explore utility <span aria-hidden="true">↗</span></a></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="certifications" class="section">
-      <div class="container">
-        <h2>Certifications &amp; Continuous Learning</h2>
-        <p>
-          I continuously invest in professional training focused on embedded systems, firmware architecture, RTOS
-          development, embedded AI, security, connectivity, documentation and engineering workflows.
-        </p>
-        <p class="cert-source">
-          My learning path combines EmbeddedExpertIO programs and independent technical studies focused on
-          production-grade firmware development.
-        </p>
-        <div class="cert-summary-grid" role="list" aria-label="Certification focus categories">
-          <div class="chip cert-summary-chip" role="listitem">AI-Assisted Engineering</div>
-          <div class="chip cert-summary-chip" role="listitem">Bare-Metal Firmware Development</div>
-          <div class="chip cert-summary-chip" role="listitem">Embedded C and C++</div>
-          <div class="chip cert-summary-chip" role="listitem">RTOS Engineering</div>
-          <div class="chip cert-summary-chip" role="listitem">Firmware Security &amp; Reverse Engineering</div>
-          <div class="chip cert-summary-chip" role="listitem">Wireless &amp; IoT Connectivity</div>
-          <div class="chip cert-summary-chip" role="listitem">Embedded AI &amp; Machine Learning</div>
-          <div class="chip cert-summary-chip" role="listitem">DSP, Audio &amp; Computer Vision</div>
-          <div class="chip cert-summary-chip" role="listitem">STM32 Ecosystem</div>
-          <div class="chip cert-summary-chip" role="listitem">Firmware Architecture &amp; Documentation</div>
-          <div class="chip cert-summary-chip" role="listitem">Hardware Design &amp; Embedded Systems</div>
-        </div>
-        <p class="cert-highlight">50+ Specialized Embedded Systems Courses</p>
-        <p class="cert-note">Training based on EmbeddedExpertIO courses and independent technical studies.</p>
-        <a class="btn btn-primary" href="certifications.html">View Full Training Catalog</a>
+    <section class="section approach-section" id="approach" aria-labelledby="approach-heading">
+      <div class="container approach-grid">
+        <div><p class="eyebrow section-index">02 / HOW I WORK</p><h2 id="approach-heading">Don't just run it.<br><em>Prove it works.</em></h2><p class="section-lead">Reliable firmware development starts with assumptions you can challenge and outputs you can check. My laboratories connect electronics, implementation and validation.</p><a class="text-link" href="https://github.com/Anderson-Shinobi/cpp-embedded-telemetry-lab" target="_blank" rel="noopener noreferrer">See a documented validation pipeline ↗</a></div>
+        <ol class="workflow-list">
+          <li><span class="workflow-num">01</span><div><h3>Understand the hardware</h3><p>Study registers, interfaces, timing and electrical constraints before coding.</p></div></li>
+          <li><span class="workflow-num">02</span><div><h3>Build deterministically</h3><p>Implement controlled, reviewable firmware with clear interfaces.</p></div></li>
+          <li><span class="workflow-num">03</span><div><h3>Simulate and instrument</h3><p>Use tools such as Renode and telemetry to expose behavior.</p></div></li>
+          <li><span class="workflow-num">04</span><div><h3>Validate and document</h3><p>Publish evidence, limitations and reproducible test procedures.</p></div></li>
+        </ol>
       </div>
     </section>
 
-    <section id="ai-assisted-engineering" class="section">
+    <section class="section stack-section" id="stack" aria-labelledby="stack-heading">
       <div class="container">
-        <h2>AI-Assisted Engineering</h2>
-        <div class="manifesto-card">
-          <p>
-            I use privacy-aware AI-assisted development workflows with tools such as ChatGPT, Codex and Cursor to
-            support code analysis, refactoring, documentation, architecture planning and firmware workflow design.
-          </p>
-          <p>
-            My approach is privacy-aware: sensitive client data, credentials, proprietary source code and
-            confidential documents must not be exposed unnecessarily. AI is used as an engineering accelerator,
-            not as a replacement for technical responsibility.
-          </p>
+        <div class="section-heading"><div><p class="eyebrow section-index">03 / TECHNICAL FOCUS</p><h2 id="stack-heading">From registers to systems<span class="hero-dot">.</span></h2><p class="section-lead">A multidisciplinary approach connecting firmware, simulation and practical engineering tools.</p></div></div>
+        <div class="expertise-grid">
+          <article class="expertise-card"><span class="expertise-index">[ 01 ]</span><h3>Low-level firmware</h3><p>Bare-metal C/C++, drivers, ARM Cortex-M, register-level programming and hardware interfaces.</p><div class="skill-tags">C · C++ · STM32 · ESP32 · UART · SPI · I²C</div></article>
+          <article class="expertise-card"><span class="expertise-index">[ 02 ]</span><h3>Simulation &amp; testing</h3><p>MMIO modeling, virtual platforms, real-time firmware and repeatable automated validation.</p><div class="skill-tags">Renode · C# · QEMU · Zephyr · Robot Framework</div></article>
+          <article class="expertise-card"><span class="expertise-index">[ 03 ]</span><h3>Linux engineering</h3><p>Native tooling, desktop applications, CLI automation and build pipelines.</p><div class="skill-tags">Linux · Qt6 · Bash · CMake · Git</div></article>
+          <article class="expertise-card"><span class="expertise-index">[ 04 ]</span><h3>Hardware diagnostics</h3><p>PCB analysis, electronics troubleshooting, fault isolation and measurement-driven reasoning.</p><div class="skill-tags">Electronics · Instrumentation · Debugging</div></article>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section">
-      <div class="container">
-        <article class="card contact-card">
-          <h2>Let's Connect</h2>
-          <p>I'm open to embedded systems, firmware and Linux-based engineering opportunities.</p>
-          <p class="contact-email-text"><strong>Email:</strong> <a href="mailto:anderson.fw@proton.me">anderson.fw@proton.me</a></p>
-          <p class="contact-email-note">You can also copy the email address directly.</p>
-          <div class="contact-links">
-            <a class="btn btn-outline" href="https://github.com/Anderson-Shinobi" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a class="btn btn-outline" href="https://www.linkedin.com/in/anderson-cpp" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a class="btn btn-outline" href="https://anderson-shinobi.github.io/" target="_blank" rel="noopener noreferrer">Portfolio</a>
-          </div>
-        </article>
+    <section class="section about-section" id="about" aria-labelledby="about-heading">
+      <div class="container about-layout">
+        <div class="about-portrait"><img src="assets/images/profile.jpg" alt="Portrait of Anderson Nogueira" loading="lazy" width="420" height="420"><span class="portrait-label">HARDWARE THINKING / SOFTWARE DISCIPLINE</span></div>
+        <div class="about-content"><p class="eyebrow section-index">04 / THE ENGINEER</p><h2 id="about-heading">Curiosity, measured<span class="hero-dot">.</span></h2><p>I'm Anderson Nogueira, an embedded firmware developer with a foundation in electronics diagnostics and software engineering. I enjoy converting difficult hardware problems into observable, documented systems.</p><p>My academic background spans Electronics, Systems Analysis and Development, postgraduate studies in Electronics Engineering and Robotics, and ongoing undergraduate Physics studies. I use physics and mathematical reasoning to improve the way I design and validate firmware.</p><p>My portfolio is organized around practical work: repositories, experiments, test evidence and transparent technical limitations.</p><div class="about-actions"><a class="text-link" href="certifications.html">Explore technical training ↗</a><a class="text-link" href="https://www.linkedin.com/in/anderson-cpp" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div>
       </div>
+    </section>
+
+    <section class="section learning-section" id="certifications" aria-labelledby="learning-heading">
+      <div class="container learning-card"><div><p class="eyebrow section-index">05 / CONTINUOUS LEARNING</p><h2 id="learning-heading">Study. Build. Verify. Repeat.</h2><p>Courses establish foundations; laboratories demonstrate understanding. Explore my areas of continued training in bare-metal, RTOS, security, DSP and embedded AI.</p></div><a class="btn btn-outline" href="certifications.html">View training catalog ↗</a></div>
+    </section>
+
+    <section class="section contact-section" id="contact" aria-labelledby="contact-heading">
+      <div class="container contact-layout"><div><p class="eyebrow section-index">06 / CONTACT</p><h2 id="contact-heading">Have a problem<br><em>worth solving?</em></h2><p>Open to firmware, hardware simulation and Linux tooling conversations. Let's discuss a technically meaningful challenge.</p><a class="contact-email" href="mailto:anderson.fw@proton.me">anderson.fw@proton.me <span aria-hidden="true">↗</span></a></div><div class="contact-panel"><p>FIND ME ONLINE</p><a href="https://github.com/Anderson-Shinobi" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/anderson-cpp" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a href="certifications.html">Technical training <span aria-hidden="true">↗</span></a><small>AI-assisted tools support my workflow; validation and engineering responsibility remain human-led.</small></div></div>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2026 Anderson Nogueira. Built for GitHub Pages.</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+  <footer class="site-footer"><div class="container footer-content"><span>© <span id="current-year">2026</span> Anderson Nogueira</span><span>SHINOBI ENGINEERING — FROM PHYSICS TO FIRMWARE</span><a href="#home">BACK TO TOP ↑</a></div></footer>
 </body>
 </html>
