@@ -94,3 +94,15 @@ Open \`http://localhost:8000/\`.
 
 No analytics or Telegram bot requests are embedded in the site.
 \`TELEMETRY_DESIGN.md\` documents a **future** privacy-aware integration; bot secrets must never enter this public repository.
+
+## Bilingual interface — English / Português (Brasil)
+
+Use the **EN** / **PT-BR** switch in the site header to change the interface language without reloading the page. The language choice persists across the homepage and training catalog using browser `localStorage`. English remains the original HTML and default language when no preference exists; browsing in private mode still permits switching without storage.
+
+- `i18n.js`: Portuguese text dictionary and accessibility/metadata translations.
+- `index.html` and `certifications.html`: accessible language toggle and shared localization script.
+- `hybrid-v2.css`: responsive selector, including narrow-screen support.
+- Official titles of third-party training courses and technical names remain in their source language for accuracy.
+- There is **no** external translation API, visitor tracking or bot token in the frontend.
+
+Run the bilingual regression checks with `node tests/test_i18n.js` and `node --check i18n.js`.

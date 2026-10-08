@@ -1,10 +1,10 @@
-name: Hybrid Lab V2 static checks
+name: Portfolio static checks
 
 on:
   pull_request:
   push:
     branches:
-      - feature/hybrid-lab-v2
+      - 'feature/**'
 
 permissions:
   contents: read
@@ -16,5 +16,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: Check JavaScript syntax
         run: node --check script.js
+      - name: Check translation JavaScript syntax
+        run: node --check i18n.js
+      - name: Test bilingual language switching
+        run: node tests/test_i18n.js
       - name: Validate local assets, navigation anchors and filter markup
         run: python3 -m unittest discover -s tests -p 'test_site.py' -v
