@@ -20,7 +20,7 @@
 
 The homepage now includes an **Interactive Lab** section with a real, reviewable Arduino Uno (ATmega328P) bare-metal GPIO/Timer1 PWM project. The laboratory source lives at [`labs/wokwi/uno-baremetal-pwm/`](labs/wokwi/uno-baremetal-pwm/), with `sketch.ino`, `diagram.json`, and [setup/validation instructions](labs/wokwi/uno-baremetal-pwm/README.md). The circuit includes a 220 Ω LED path and a two-channel logic-analyzer hookup (PWM on D9, GPIO on D13).
 
-**Current evidence:** static circuit checks and AVR cross-compiler verification are required by CI. A public Wokwi project URL, simulator run and measured VCD are **not** currently available, so the site intentionally links to real source/instructions and an empty Wokwi editor rather than a fake "Run Simulation" destination. A verified share URL can be added as a subsequent change.
+**Current evidence:** static circuit checks and AVR cross-compiler verification are required by CI. The author provided a [public Wokwi project URL](https://wokwi.com/projects/477357756254868481), now linked via the portfolio's **Run Simulation / Executar simulação** button. The external project contents, successful simulator execution and measured VCD have **not** yet been independently confirmed; follow the [validation checklist](labs/wokwi/uno-baremetal-pwm/README.md) before claiming those outcomes.
 
 ### Validate the lab locally
 
@@ -31,7 +31,7 @@ avr-g++ -std=gnu++11 -Os -Wall -Wextra -Werror -mmcu=atmega328p -DF_CPU=16000000
   -c labs/wokwi/uno-baremetal-pwm/sketch.ino -o /tmp/shinobi-pwm.o
 ```
 
-These checks do not prove simulator output. Import the `.ino` and `.json` files into a new [Wokwi Arduino Uno project](https://wokwi.com/projects/new/arduino-uno), run it, and capture a VCD before publishing a live-demo claim.
+These checks do not prove simulator output. Open the [author-supplied Wokwi project](https://wokwi.com/projects/477357756254868481), compare its source to GitHub, run it, and capture a VCD before publishing a claim of verified behavior.
 
 ## Architecture
 

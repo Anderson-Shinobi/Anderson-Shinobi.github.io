@@ -1,6 +1,6 @@
 # SHINOBI Interactive Lab — AVR Bare-Metal GPIO + Timer1 PWM
 
-**Status:** source and wiring published for review. No Wokwi project ID or online simulation run is claimed yet.
+**Status:** [Wokwi project #477357756254868481](https://wokwi.com/projects/477357756254868481) was linked by the project author. The external URL and its current simulator contents have not been independently checked here; no successful execution or VCD measurement is claimed yet.
 
 ## Hardware
 
@@ -19,17 +19,18 @@ The LED and resistor make a circuit-level example; Wokwi's resistor/LED model is
 
 These are **design expectations** pending validation by executing the Wokwi simulation. The repository's compiler/static tests do not assert real-time simulator behavior.
 
-## Run on Wokwi.com (manual first-time import)
+## Open the shared project on Wokwi
 
-1. Open [New Arduino Uno project](https://wokwi.com/projects/new/arduino-uno).
-2. Replace the editor's `sketch.ino` with [this sketch](./sketch.ino).
-3. Replace `diagram.json` with [this circuit](./diagram.json).
-4. Click **Start Simulation**. Confirm LED brightness cycling and the status LED.
-5. Open the Serial Monitor (9600 baud) and check the three alternating target labels.
-6. Stop simulation to download `shinobi-pwm-capture.vcd`. Use PulseView or another VCD viewer to examine the 976.56 Hz D9 waveform and D13 transitions.
-7. Click **Save** in your Wokwi account to obtain a permanent public `https://wokwi.com/projects/<id>` link. Only then should the portfolio add a **Run Simulation** link to this actual project.
+1. Open the author-supplied [SHINOBI AVR Bare-Metal PWM Lab](https://wokwi.com/projects/477357756254868481) project.
+2. Click **Start Simulation**, and verify that the LED connected to D9 changes brightness and the onboard D13 LED toggles.
+3. Open the Serial Monitor (9600 baud) and check for three alternating target labels.
+4. Compare the current Wokwi editor's `sketch.ino` and `diagram.json` against the canonical files stored beside this README. A shared project can diverge from the GitHub version.
+5. Stop the simulation to obtain a `.vcd` file (if supported by the Wokwi analyzer). Examine PWM period, duty and GPIO transitions with a VCD viewer such as PulseView.
+6. Record the actual observed behavior and any differences from the design expectations before marking the simulation as validated.
 
-The Wokwi editor and public project publishing require access to Wokwi and may have account, plan, or browser constraints.
+If the shared project cannot be opened, create a [new Arduino Uno project](https://wokwi.com/projects/new/arduino-uno) and import [`sketch.ino`](./sketch.ino) and [`diagram.json`](./diagram.json) manually.
+
+The Wokwi editor and project sharing may have account, plan or browser constraints. Never place Wokwi API tokens in website JavaScript.
 
 ## Source validation
 
@@ -47,7 +48,7 @@ This verifies register-level firmware compilation, **not** a complete simulator 
 
 ## Next evidence milestone
 
-- Save a real Wokwi project and add its verified ID to the portfolio.
+- Confirm the author-supplied Wokwi link opens publicly and that the editor source matches the GitHub files.
 - Measure period, duty cycle and step durations from a simulator-produced VCD.
 - Optionally add Wokwi CI using a repository secret `WOKWI_CLI_TOKEN`, never a token in client-side HTML or git.
 - Record emulator-vs-physical deviations and repeat on a real Arduino Uno.

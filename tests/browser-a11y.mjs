@@ -49,6 +49,22 @@ try {
         assert.equal(await page.locator("html").getAttribute("lang"), language);
 
         if (pageName === "index.html") {
+          // Wokwi link regression: correct saved project, localized label and safe external behavior.
+          const wokwi = page.locator('#interactive-lab a[href="https://wokwi.com/projects/477357756254868481"]');
+          assert.equal(await wokwi.count(), 1, "Exactly one public Wokwi project action");
+          assert.equal(await wokwi.getAttribute("target"), "_blank");
+          assert.match(await wokwi.getAttribute("rel"), /noopener/);
+          assert.match(await wokwi.getAttribute("rel"), /noreferrer/);
+          const expectedLabel = language === "pt-BR" ? "Executar simulação" : "Run Simulation";
+          assert.equal((await wokwi.innerText()).replace("↗", "").trim(), expectedLabel, "Localized simulation action");
+          assert.equal(await wokwi.getAttribute("aria-label"),
+            language === "pt-BR"
+              ? "Executar simulação SHINOBI AVR PWM no Wokwi (abre em nova aba)"
+              : "Run SHINOBI AVR PWM simulation on Wokwi (opens in new tab)");
+          // Test only the URL and UI wiring. Remote Wokwi execution remains a separate manual check.
+        }
+
+        if (pageName === "index.html") {
           // End-to-end regression: pointer and keyboard must both filter real cards.
           const expected = {
             all: ["C++ Embedded Telemetry Lab", "Renode C# Peripheral Lab", "qKAGE Home Supply", "Linux Mint USB Prep"],

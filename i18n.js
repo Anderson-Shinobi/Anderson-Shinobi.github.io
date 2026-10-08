@@ -9,7 +9,9 @@
     "INTERACTIVE LAB / 001": "LABORATÓRIO INTERATIVO / 001",
     "From source to waveform": "Do código ao sinal",
     "Explore a reproducible AVR project with source code, circuit wiring and testable hardware behavior.": "Explore um projeto AVR reproduzível com código-fonte, conexões do circuito e comportamento de hardware verificável.",
-    "SOURCE READY · LIVE DEMO PENDING": "CÓDIGO DISPONÍVEL · DEMO PENDENTE",
+    "WOKWI PROJECT LINKED · VALIDATION PENDING": "PROJETO WOKWI VINCULADO · VALIDAÇÃO PENDENTE",
+    "Run Simulation": "Executar simulação",
+    "Wokwi project link supplied by the author. Open it and press Start Simulation; live behavior and VCD measurements are still awaiting independent verification.": "Link do projeto Wokwi fornecido pelo autor. Abra-o e pressione Start Simulation; o comportamento real e as medições VCD ainda precisam ser verificados de forma independente.",
     "SHINOBI / WOKWI LAB": "SHINOBI / LAB WOKWI",
     "ILLUSTRATIVE · NOT A CAPTURE": "ILUSTRATIVO · NÃO É UMA CAPTURA",
     "AVR · UNO R3 · REGISTER LEVEL": "AVR · UNO R3 · REGISTRADORES",
@@ -146,6 +148,7 @@
   "© 2026 Anderson Nogueira. Built for GitHub Pages. |": "© 2026 Anderson Nogueira. Desenvolvido para GitHub Pages. |"
 };
   const PT_ATTRIBUTES = {
+    "Run SHINOBI AVR PWM simulation on Wokwi (opens in new tab)": "Executar simulação SHINOBI AVR PWM no Wokwi (abre em nova aba)",
   "Main navigation": "Navegação principal",
   "Open navigation": "Abrir menu",
   "Close navigation": "Fechar menu",
