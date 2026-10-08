@@ -39,10 +39,12 @@
 │   └── browser-a11y.mjs       # Chromium + axe 2-page/2-language/2-viewport audit
 ├── .github/workflows/
 │   ├── site-checks.yml        # Lightweight checks
+│   ├── lighthouse.yml         # Informational lab performance audit
 │   └── deploy.yml             # Quality gate → artifact → Pages
 ├── .htmlhintrc
 ├── .stylelintrc.json
 ├── package.json
+├── package-lock.json         # Locked dependency resolution (npm ci)
 └── TELEMETRY_DESIGN.md
 \`\`\`
 
@@ -58,7 +60,7 @@ Prerequisites: Node.js 22+, npm, Python 3, and \`webp\` (\`cwebp\`). Chromium is
 
 \`\`\`bash
 sudo apt-get install -y webp
-npm install
+npm ci
 npm run verify
 python3 -m http.server 8000 --directory dist
 # Open http://localhost:8000
