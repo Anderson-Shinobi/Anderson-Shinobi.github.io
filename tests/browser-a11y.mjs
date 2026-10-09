@@ -49,6 +49,23 @@ try {
         assert.equal(await page.locator("html").getAttribute("lang"), language);
 
         if (pageName === "index.html") {
+          // Decorative arrows sit in separate aria-hidden spans: only the adjacent
+          // text node should be translated, without changing the arrow itself.
+          const localizedLinks = [
+            ['#approach a.text-link', 'See a documented validation pipeline', 'Veja um pipeline de validação documentado', '↗'],
+            ['.about-actions a[href="certifications.html"]', 'Explore technical training', 'Conheça minha formação complementar', '↗'],
+            ['.learning-card a[href="certifications.html"]', 'View training catalog', 'Ver catálogo de formação', '↗'],
+            ['.site-footer a[href="#home"]', 'BACK TO TOP', 'VOLTAR AO TOPO', '↑']
+          ];
+          for (const [selector, en, pt, arrow] of localizedLinks) {
+            const link = page.locator(selector);
+            assert.equal(await link.count(), 1, "Unique localized link: " + selector);
+            const expected = language === "pt-BR" ? pt : en;
+            assert.equal((await link.innerText()).replace(arrow, "").trim(), expected,
+              "Localized link text: " + selector);
+            const icon = link.locator('span[aria-hidden="true"]');
+            assert.equal((await icon.textContent()).trim(), arrow, "Preserved decorative arrow: " + selector);
+          }
           // Wokwi link regression: correct saved project, localized label and safe external behavior.
           const wokwi = page.locator('#interactive-lab a[href="https://wokwi.com/projects/477357756254868481"]');
           assert.equal(await wokwi.count(), 1, "Exactly one public Wokwi project action");
