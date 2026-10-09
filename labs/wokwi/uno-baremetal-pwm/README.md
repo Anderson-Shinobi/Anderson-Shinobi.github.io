@@ -1,3 +1,11 @@
+## License
+
+The original source code (`sketch.ino`), Wokwi circuit definition (`diagram.json`) and laboratory documentation in this directory are released under the **[MIT License](LICENSE)**.
+
+**Copyright © 2026 Anderson Nogueira.** Reuse, modification and redistribution, including commercial use, are permitted under the license terms, provided the copyright and license notice are retained. The license does not grant rights to third-party trademarks, the Wokwi simulator/platform, or the Arduino name and logos.
+
+This license applies **only to this AVR PWM laboratory directory**, not automatically to the entire SHINOBI portfolio or unrelated repositories.
+
 # SHINOBI Interactive Lab — AVR Bare-Metal GPIO + Timer1 PWM
 
 **Status:** [Wokwi project #477357756254868481](https://wokwi.com/projects/477357756254868481) linked. **Simulator digital timing verified from the author's VCD export**: see [measured PWM and D13 evidence](evidence/VCD_VALIDATION.md). Live external project contents and any physical-hardware behavior remain separate checks.

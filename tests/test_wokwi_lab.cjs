@@ -44,4 +44,12 @@ assert.doesNotMatch(logic,/\b(?:pinMode|digitalWrite|analogWrite|delay|Serial|ma
 assert.equal(16000000/(64*256),976.5625,"Timer1 PWM calculation");
 for(const count of [26,128,230]) assert.ok(count>=0 && count<=255);
 assert.equal(diagram.serialMonitor.display,"auto");
+const license = fs.readFileSync(path.join(root, "LICENSE"), "utf8");
+assert.match(license, /^MIT License\s*$/m);
+assert.match(license, /Copyright \(c\) 2026 Anderson Nogueira/);
+assert.match(license, /Permission is hereby granted, free of charge/);
+assert.match(license, /THE SOFTWARE IS PROVIDED "AS IS"/);
+assert.match(code, /SPDX-License-Identifier: MIT/);
+console.log("PASS: laboratory-scoped MIT license and firmware SPDX header");
+
 console.log("PASS: UNO connections, LED, analyzer, register-only code and PWM formula");
