@@ -16,22 +16,17 @@
 - **Bilingual content:** EN/PT-BR without external translation APIs. Language preference is stored locally, with an English fallback when browser storage is unavailable.
 - **Privacy:** no analytics, tracking pixels or Telegram BotFather token. Future aggregate visitor telemetry is only specified in \`TELEMETRY_DESIGN.md\`.
 
-## SHINOBI Interactive Lab — Wokwi starter
+## SHINOBI Interactive Lab — independent repository
 
-The homepage now includes an **Interactive Lab** section with a real, reviewable Arduino Uno (ATmega328P) bare-metal GPIO/Timer1 PWM project. The laboratory source lives at [`labs/wokwi/uno-baremetal-pwm/`](labs/wokwi/uno-baremetal-pwm/), with `sketch.ino`, `diagram.json`, and [setup/validation instructions](labs/wokwi/uno-baremetal-pwm/README.md). The circuit includes a 220 Ω LED path and a two-channel logic-analyzer hookup (PWM on D9, GPIO on D13).
+The **SHINOBI AVR Bare-Metal PWM Lab** is now a standalone, MIT-licensed repository:
+**[Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-PWM-Lab](https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-PWM-Lab)**.
 
-**Current evidence:** static circuit checks and AVR cross-compiler verification are required by CI. The author provided a [public Wokwi project URL](https://wokwi.com/projects/477357756254868481), now linked via the portfolio's **Run Simulation / Executar simulação** button. The author's downloaded Wokwi logic-analyzer VCD has now been analyzed: **976.5625 Hz / 1.024 ms**, with measured duty cycles **10.15625%, 50.00000%, 89.84375%**. See the [timing evidence](labs/wokwi/uno-baremetal-pwm/evidence/VCD_VALIDATION.md) and [CSV](labs/wokwi/uno-baremetal-pwm/evidence/measurements.csv). The original VCD is identified by SHA-256 but is not committed; physical hardware performance and matching of the live Wokwi editor to the repository are not independently established.
+The portfolio's [Interactive Lab](https://anderson-shinobi.github.io/#interactive-lab) is a showcase linking to the laboratory—not the source of truth. Visitors can access the [firmware](https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-PWM-Lab/blob/main/sketch.ino), [circuit](https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-PWM-Lab/blob/main/diagram.json), [original VCD](https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-PWM-Lab/blob/main/evidence/wokwi-logic.vcd), [measurements](https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-PWM-Lab/blob/main/evidence/VCD_VALIDATION.md), tests and AVR compilation pipeline without opening the website.
 
-### Validate the lab locally
-
-```bash
-node tests/test_wokwi_lab.cjs
-sudo apt-get install -y gcc-avr avr-libc
-avr-g++ -std=gnu++11 -Os -Wall -Wextra -Werror -mmcu=atmega328p -DF_CPU=16000000UL -x c++ \
-  -c labs/wokwi/uno-baremetal-pwm/sketch.ino -o /tmp/shinobi-pwm.o
-```
-
-These checks do not prove simulator output. Open the [author-supplied Wokwi project](https://wokwi.com/projects/477357756254868481), compare its source to GitHub, run it, and capture an independent VCD if you want to reproduce the [simulator measurements](labs/wokwi/uno-baremetal-pwm/evidence/VCD_VALIDATION.md).
+- **Live simulation:** [Wokwi project #477357756254868481](https://wokwi.com/projects/477357756254868481)
+- **Simulated PWM:** 976.5625 Hz / 1.024 ms; measured duty cycles 10.15625%, 50%, 89.84375%
+- **Experimental boundary:** the VCD proves Wokwi digital timing, **not physical board measurements**.
+- **CI ownership:** register-level firmware compilation, circuit checks and VCD trace integrity run in the **laboratory repository**. This portfolio checks only its links, accessibility and presentation.
 
 ## Architecture
 
@@ -150,4 +145,4 @@ The catalog has a Lighthouse accessibility score of **98** even though the separ
 - [ ] Merge after approving the release
 - [ ] Confirm \`deploy.yml\` and the published website on the new commit
 
-**License:** The [SHINOBI AVR Bare-Metal PWM Lab](labs/wokwi/uno-baremetal-pwm/) is licensed under the [MIT License](labs/wokwi/uno-baremetal-pwm/LICENSE) (© 2026 Anderson Nogueira). The MIT license is scoped to that laboratory and does **not** automatically license the rest of this personal portfolio or unrelated projects. Third-party trademarks remain with their respective owners.
+**License:** The independent [SHINOBI AVR Bare-Metal PWM Lab](https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-PWM-Lab) uses the [MIT License](https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-PWM-Lab/blob/main/LICENSE) (© 2026 Anderson Nogueira). This does **not** automatically license this separate personal portfolio or unrelated projects. Third-party trademarks remain with their respective owners.
