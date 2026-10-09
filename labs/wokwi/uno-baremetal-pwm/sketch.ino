@@ -1,4 +1,7 @@
 /*
+ * SPDX-License-Identifier: MIT
+ * Copyright (c) 2026 Anderson Nogueira
+ *
  * SHINOBI Interactive Lab — AVR Timer1 PWM, GPIO and UART
  * Target: Arduino Uno R3 / ATmega328P @ 16 MHz
  *
