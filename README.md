@@ -150,4 +150,4 @@ The catalog has a Lighthouse accessibility score of **98** even though the separ
 - [ ] Merge after approving the release
 - [ ] Confirm \`deploy.yml\` and the published website on the new commit
 
-**License:** Personal portfolio. All trademarks and third-party project names belong to their respective owners.
+**License:** The [SHINOBI AVR Bare-Metal PWM Lab](labs/wokwi/uno-baremetal-pwm/) is licensed under the [MIT License](labs/wokwi/uno-baremetal-pwm/LICENSE) (© 2026 Anderson Nogueira). The MIT license is scoped to that laboratory and does **not** automatically license the rest of this personal portfolio or unrelated projects. Third-party trademarks remain with their respective owners.
