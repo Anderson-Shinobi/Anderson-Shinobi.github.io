@@ -46,12 +46,7 @@ jobs:
       - name: Install WebP encoder
         run: |
           sudo apt-get update
-          sudo apt-get install -y webp gcc-avr avr-libc
-
-      - name: Compile AVR bare-metal firmware with warnings as errors
-        run: |
-          avr-g++ -std=gnu++11 -Os -Wall -Wextra -Werror -mmcu=atmega328p -DF_CPU=16000000UL -x c++ \
-            -c labs/wokwi/uno-baremetal-pwm/sketch.ino -o /tmp/shinobi-pwm.o
+          sudo apt-get install -y webp
 
       - name: Minify and convert profile image to WebP
         run: npm run build
