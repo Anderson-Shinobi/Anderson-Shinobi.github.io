@@ -20,7 +20,7 @@
 
 The homepage now includes an **Interactive Lab** section with a real, reviewable Arduino Uno (ATmega328P) bare-metal GPIO/Timer1 PWM project. The laboratory source lives at [`labs/wokwi/uno-baremetal-pwm/`](labs/wokwi/uno-baremetal-pwm/), with `sketch.ino`, `diagram.json`, and [setup/validation instructions](labs/wokwi/uno-baremetal-pwm/README.md). The circuit includes a 220 Ω LED path and a two-channel logic-analyzer hookup (PWM on D9, GPIO on D13).
 
-**Current evidence:** static circuit checks and AVR cross-compiler verification are required by CI. The author provided a [public Wokwi project URL](https://wokwi.com/projects/477357756254868481), now linked via the portfolio's **Run Simulation / Executar simulação** button. The external project contents, successful simulator execution and measured VCD have **not** yet been independently confirmed; follow the [validation checklist](labs/wokwi/uno-baremetal-pwm/README.md) before claiming those outcomes.
+**Current evidence:** static circuit checks and AVR cross-compiler verification are required by CI. The author provided a [public Wokwi project URL](https://wokwi.com/projects/477357756254868481), now linked via the portfolio's **Run Simulation / Executar simulação** button. The author's downloaded Wokwi logic-analyzer VCD has now been analyzed: **976.5625 Hz / 1.024 ms**, with measured duty cycles **10.15625%, 50.00000%, 89.84375%**. See the [timing evidence](labs/wokwi/uno-baremetal-pwm/evidence/VCD_VALIDATION.md) and [CSV](labs/wokwi/uno-baremetal-pwm/evidence/measurements.csv). The original VCD is identified by SHA-256 but is not committed; physical hardware performance and matching of the live Wokwi editor to the repository are not independently established.
 
 ### Validate the lab locally
 
@@ -31,7 +31,7 @@ avr-g++ -std=gnu++11 -Os -Wall -Wextra -Werror -mmcu=atmega328p -DF_CPU=16000000
   -c labs/wokwi/uno-baremetal-pwm/sketch.ino -o /tmp/shinobi-pwm.o
 ```
 
-These checks do not prove simulator output. Open the [author-supplied Wokwi project](https://wokwi.com/projects/477357756254868481), compare its source to GitHub, run it, and capture a VCD before publishing a claim of verified behavior.
+These checks do not prove simulator output. Open the [author-supplied Wokwi project](https://wokwi.com/projects/477357756254868481), compare its source to GitHub, run it, and capture an independent VCD if you want to reproduce the [simulator measurements](labs/wokwi/uno-baremetal-pwm/evidence/VCD_VALIDATION.md).
 
 ## Architecture
 
