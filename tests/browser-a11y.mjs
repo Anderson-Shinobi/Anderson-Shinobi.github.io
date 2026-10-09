@@ -61,11 +61,17 @@ try {
             language === "pt-BR"
               ? "Executar simulação SHINOBI AVR PWM no Wokwi (abre em nova aba)"
               : "Run SHINOBI AVR PWM simulation on Wokwi (opens in new tab)");
-          const evidence = page.locator('#interactive-lab a[href="https://github.com/Anderson-Shinobi/Anderson-Shinobi.github.io/blob/main/labs/wokwi/uno-baremetal-pwm/evidence/VCD_VALIDATION.md"]');
+          const evidence = page.locator('#interactive-lab a[href="https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-PWM-Lab/blob/main/evidence/VCD_VALIDATION.md"]');
           assert.equal(await evidence.count(), 1, "Measured PWM evidence link");
           const evidenceLabel = language === "pt-BR" ? "Evidência de PWM medido" : "Measured PWM evidence";
           assert.equal((await evidence.innerText()).replace("↗", "").trim(), evidenceLabel, "Evidence link translated");
-          // These tests verify site behavior; the report contains simulator-only measurements.
+          const independent = page.locator('#interactive-lab a[href="https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-PWM-Lab"]');
+          assert.equal(await independent.count(), 1, "Standalone laboratory repository action");
+          assert.equal(await independent.getAttribute("target"), "_blank");
+          assert.match(await independent.getAttribute("rel"), /noopener/);
+          const repoLabel = language === "pt-BR" ? "Ver firmware e circuito" : "View firmware and circuit";
+          assert.equal((await independent.innerText()).replace("↗", "").trim(), repoLabel, "Standalone repository link translated");
+          // Browser tests verify website navigation; physical hardware remains untested.
 
         }
 
