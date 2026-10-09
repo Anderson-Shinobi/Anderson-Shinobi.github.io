@@ -61,7 +61,12 @@ try {
             language === "pt-BR"
               ? "Executar simulação SHINOBI AVR PWM no Wokwi (abre em nova aba)"
               : "Run SHINOBI AVR PWM simulation on Wokwi (opens in new tab)");
-          // Test only the URL and UI wiring. Remote Wokwi execution remains a separate manual check.
+          const evidence = page.locator('#interactive-lab a[href="https://github.com/Anderson-Shinobi/Anderson-Shinobi.github.io/blob/main/labs/wokwi/uno-baremetal-pwm/evidence/VCD_VALIDATION.md"]');
+          assert.equal(await evidence.count(), 1, "Measured PWM evidence link");
+          const evidenceLabel = language === "pt-BR" ? "Evidência de PWM medido" : "Measured PWM evidence";
+          assert.equal((await evidence.innerText()).replace("↗", "").trim(), evidenceLabel, "Evidence link translated");
+          // These tests verify site behavior; the report contains simulator-only measurements.
+
         }
 
         if (pageName === "index.html") {
