@@ -6,6 +6,7 @@
 import { readFile, writeFile, mkdir, cp, rm, stat } from "node:fs/promises";
 import { join, resolve, dirname } from "node:path";
 import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import { transform } from "esbuild";
 
 const root = resolve(import.meta.dirname, "..");
@@ -26,6 +27,7 @@ const css = (await Promise.all(cssSources.map(read))).join("\n");
 const minifiedCSS = await transform(css, { loader: "css", minify: true, target: "safari15" });
 await put("assets/dist/site.min.css", minifiedCSS.code);
 
+const scriptAssets = new Map();
 for (const name of ["script.js", "i18n.js"]) {
   const output = await transform(await read(name), {
     loader: "js",
@@ -33,7 +35,14 @@ for (const name of ["script.js", "i18n.js"]) {
     minify: true,
     legalComments: "none",
   });
-  await put("assets/dist/" + name.replace(".js", ".min.js"), output.code);
+  // Content-address the translated runtime. A fixed i18n.min.js URL may be
+  // cached after a deployment, leaving the page with an outdated dictionary.
+  const filename = name === "i18n.js"
+    ? "i18n." + createHash("sha256").update(output.code).digest("hex").slice(0, 12) + ".min.js"
+    : "script.min.js";
+  const asset = "assets/dist/" + filename;
+  await put(asset, output.code);
+  scriptAssets.set(name.replace(".js", ""), asset);
 }
 
 const jpg = join(root, "assets", "images", "profile.jpg");
@@ -54,7 +63,7 @@ for (const page of ["index.html", "certifications.html"]) {
   for (const name of ["script", "i18n"]) {
     const original = '<script src="' + name + '.js" defer></script>';
     if (!html.includes(original)) throw new Error(page + ": missing " + original);
-    html = html.replace(original, '<script src="assets/dist/' + name + '.min.js" defer></script>');
+    html = html.replace(original, '<script src="' + scriptAssets.get(name) + '" defer></script>');
   }
   if (page === "index.html") {
     const tag = '<picture class="profile-picture">';
@@ -74,7 +83,7 @@ photo.savings_percent = Number(((1 - photo.webp_bytes / photo.jpeg_bytes) * 100)
 await put("assets/dist/build-metrics.json", JSON.stringify({
   generated: true,
   css_bytes: await bytes("assets/dist/site.min.css"),
-  js_bytes: (await bytes("assets/dist/script.min.js")) + (await bytes("assets/dist/i18n.min.js")),
+  js_bytes: (await bytes(scriptAssets.get("script"))) + (await bytes(scriptAssets.get("i18n"))),
   photo,
 }, null, 2) + "\n");
 
