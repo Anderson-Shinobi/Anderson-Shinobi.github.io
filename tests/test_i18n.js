@@ -14,7 +14,11 @@ function setup(page, saved = new Map(), blockStorage = false) {
     { nodeValue: original, parentElement: { closest: () => null } },
     { nodeValue: paragraph, parentElement: { closest: () => null } },
     { nodeValue: "  Engineering knowledge, applied.  ", parentElement: { closest: () => null } },
-    { nodeValue: "  Official course title remains in English  ", parentElement: { closest: () => null } }
+    { nodeValue: "  Official course title remains in English  ", parentElement: { closest: () => null } },
+    { nodeValue: "  Explore technical training  ", parentElement: { closest: () => null } },
+    { nodeValue: "  View training catalog  ", parentElement: { closest: () => null } },
+    { nodeValue: "  See a documented validation pipeline  ", parentElement: { closest: () => null } },
+    { nodeValue: "  BACK TO TOP  ", parentElement: { closest: () => null } }
   ];
 
   const makeElement = (attrs = {}, dataset = {}) => {
@@ -83,6 +87,10 @@ assert.equal(home.textNodes[0].nodeValue, original);
 home.portugueseButton.click();
 assert.equal(home.document.documentElement.lang, "pt-BR");
 assert.equal(home.textNodes[0].nodeValue, "  Projetos  ");
+assert.equal(home.textNodes[4].nodeValue, "  Conheça minha formação complementar  ");
+assert.equal(home.textNodes[5].nodeValue, "  Ver catálogo de formação  ");
+assert.equal(home.textNodes[6].nodeValue, "  Veja um pipeline de validação documentado  ");
+assert.equal(home.textNodes[7].nodeValue, "  VOLTAR AO TOPO  ");
 assert.match(home.textNodes[1].nodeValue, /Desenvolvo e valido software embarcado/);
 assert.equal(home.alt.getAttribute("alt"), "Retrato de Anderson Nogueira");
 assert.equal(home.nav.getAttribute("aria-label"), "Abrir menu");
@@ -99,6 +107,10 @@ home.englishButton.click();
 assert.equal(home.document.documentElement.lang, "en");
 assert.equal(home.textNodes[0].nodeValue, original);
 assert.equal(home.textNodes[1].nodeValue, paragraph);
+assert.equal(home.textNodes[4].nodeValue, "  Explore technical training  ");
+assert.equal(home.textNodes[5].nodeValue, "  View training catalog  ");
+assert.equal(home.textNodes[6].nodeValue, "  See a documented validation pipeline  ");
+assert.equal(home.textNodes[7].nodeValue, "  BACK TO TOP  ");
 assert.equal(home.alt.getAttribute("alt"), "Portrait of Anderson Nogueira");
 assert.equal(home.document.title, "Original English document title");
 
