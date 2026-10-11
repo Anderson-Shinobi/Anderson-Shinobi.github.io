@@ -34,7 +34,7 @@ def parse(page):
 
 class PortfolioSmokeTests(unittest.TestCase):
     def test_required_files(self):
-        for name in (*PAGES, "style.css", "hybrid-v2.css", "script.js", "i18n.js", "assets/images/profile.jpg"):
+        for name in (*PAGES, "style.css", "hybrid-v2.css", "script.js", "i18n.js", "assets/images/profile.jpg", "assets/icons/shinobi-raven-shield.svg"):
             with self.subTest(path=name):
                 self.assertTrue((ROOT / name).is_file(), f"Missing {name}")
 
@@ -64,6 +64,25 @@ class PortfolioSmokeTests(unittest.TestCase):
         self.assertEqual(home.count('class="project-card card'), 4)
         self.assertIn('data-filter="all"', home)
         self.assertNotIn('onerror="', home.lower())
+
+    def test_three_independent_avr_labs(self):
+        home = (ROOT / "index.html").read_text(encoding="utf-8")
+        lab_start = home.index('id="interactive-lab"')
+        lab_end = home.index('class="section approach-section"', lab_start)
+        lab_section = home[lab_start:lab_end]
+        self.assertEqual(lab_section.count('class="avr-lab-card avr-lab-'), 3)
+        self.assertEqual(lab_section.count('class="avr-lab-waveform"'), 3)
+        self.assertIn('assets/icons/shinobi-raven-shield.svg', lab_section)
+        self.assertTrue((ROOT / "assets/icons/shinobi-raven-shield.svg").is_file())
+        for project in ("477357756254868481", "477544744412189697",
+                        "477548989078745089"):
+            self.assertEqual(lab_section.count("wokwi.com/projects/" + project), 1)
+        for name in ("PWM-Lab", "SPI-Lab", "I2C-Lab"):
+            self.assertEqual(lab_section.count("SHINOBI-AVR-Bare-Metal-" + name), 1)
+        self.assertNotIn("/evidence/", lab_section)
+        self.assertNotIn("CPOL", lab_section)
+        self.assertNotIn("47.77", lab_section)
+        self.assertNotIn("47.87", lab_section)
 
     def test_telemetry_not_enabled(self):
         for page in (*PAGES, "script.js"):
