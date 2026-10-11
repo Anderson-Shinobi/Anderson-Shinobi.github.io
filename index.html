@@ -166,15 +166,16 @@
         <div class="lab-description">
           <p class="eyebrow">AVR LABS / INDEPENDENT REPOSITORIES</p>
           <h3>LAB 02: SPI · LAB 03: I²C / TWI</h3>
-          <p>Two independent bare-metal Arduino Uno laboratories with source, Wokwi circuits and measured waveforms. SPI clock and loopback were measured with an unresolved CPOL=1 discrepancy. I²C captured 100 kHz, five DS1307 transactions with ACK/NACK and an expected absent-device NACK; the original capture also exposed a long SCL-low hold.</p>
+          <p>Two independent bare-metal Arduino Uno laboratories with reproducible Wokwi measurements. SPI clock/loopback passed while a CPOL=1 discrepancy remains open. I²C delivered 100 kHz DS1307 reads and expected ACK/NACK; a second capture verified removal of a 47.77 ms SCL-low hold after correcting STOP-before-UART ordering.</p>
           <div class="lab-actions">
             <a class="btn btn-primary" href="https://wokwi.com/projects/477544744412189697" target="_blank" rel="noopener noreferrer">Run SPI simulation <span aria-hidden="true">↗</span></a>
             <a class="btn btn-primary" href="https://wokwi.com/projects/477548989078745089" target="_blank" rel="noopener noreferrer" aria-label="Run SHINOBI AVR I2C TWI simulation on Wokwi (opens in new tab)">Run I²C/TWI simulation <span aria-hidden="true">↗</span></a>
             <a class="btn btn-outline" href="https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-SPI-Lab" target="_blank" rel="noopener noreferrer">LAB 02 · SPI source &amp; tests <span aria-hidden="true">↗</span></a>
             <a class="btn btn-outline" href="https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-I2C-Lab" target="_blank" rel="noopener noreferrer">LAB 03 · I²C/TWI source &amp; tests <span aria-hidden="true">↗</span></a>
             <a class="btn btn-outline" href="https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-I2C-Lab/blob/main/evidence/I2C_VCD_VALIDATION.md" target="_blank" rel="noopener noreferrer">Measured I²C VCD evidence <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-outline" href="https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-I2C-Lab/blob/main/evidence/I2C_POSTFIX_VCD_VALIDATION.md" target="_blank" rel="noopener noreferrer">Post-fix I²C timing evidence <span aria-hidden="true">↗</span></a>
           </div>
-          <p class="lab-note">AVR builds and static tests passed. First I²C VCD validated protocol frames in Wokwi; the subsequent STOP-before-UART firmware fix still needs a fresh VCD. Neither laboratory has been physically verified.</p>
+          <p class="lab-note">AVR builds and static tests passed. Post-fix I²C VCD shows 10 correct DS1307 reads and probe duration reduced from 47.87 ms to 108.875 µs. Physical hardware and I²C UART output are not yet verified.</p>
         </div>
       </div>
     </section>
