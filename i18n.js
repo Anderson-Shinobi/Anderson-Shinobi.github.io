@@ -10,6 +10,7 @@
     "UPCOMING AVR LABS / INDEPENDENT REPOSITORIES": "PRÓXIMOS LABORATÓRIOS AVR / REPOSITÓRIOS INDEPENDENTES",
     "Next: SPI and I²C / TWI drivers": "Próximos: drivers SPI e I²C / TWI",
     "Two new register-level Arduino Uno experiments with their own firmware, Wokwi wiring, MIT license and automated AVR build checks. Protocol timing and VCD measurements are still pending.": "Dois novos experimentos no Arduino Uno por registradores, cada um com firmware, conexões Wokwi, licença MIT e verificações automatizadas de compilação AVR. A temporização dos protocolos e as medições VCD ainda estão pendentes.",
+    "Run SPI simulation": "Executar simulação SPI",
     "LAB 02 · SPI source & tests": "LAB 02 · Código SPI e testes",
     "LAB 03 · I²C/TWI source & tests": "LAB 03 · Código I²C/TWI e testes",
     "AVR build checks passed; Wokwi protocol captures and physical hardware validation have not been completed.": "Compilação AVR aprovada; as capturas de protocolo no Wokwi e a validação física ainda não foram concluídas.",
