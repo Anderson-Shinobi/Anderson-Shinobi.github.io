@@ -66,28 +66,46 @@ try {
             const icon = link.locator('span[aria-hidden="true"]');
             assert.equal((await icon.textContent()).trim(), arrow, "Preserved decorative arrow: " + selector);
           }
-          // Wokwi link regression: correct saved project, localized label and safe external behavior.
-          const wokwi = page.locator('#interactive-lab a[href="https://wokwi.com/projects/477357756254868481"]');
-          assert.equal(await wokwi.count(), 1, "Exactly one public Wokwi project action");
-          assert.equal(await wokwi.getAttribute("target"), "_blank");
-          assert.match(await wokwi.getAttribute("rel"), /noopener/);
-          assert.match(await wokwi.getAttribute("rel"), /noreferrer/);
-          const expectedLabel = language === "pt-BR" ? "Executar simulação" : "Run Simulation";
-          assert.equal((await wokwi.innerText()).replace("↗", "").trim(), expectedLabel, "Localized simulation action");
-          assert.equal(await wokwi.getAttribute("aria-label"),
+          // Three independently runnable AVR labs, localized without duplicating CTAs.
+          const labs = [
+            ["477357756254868481", "SHINOBI-AVR-Bare-Metal-PWM-Lab"],
+            ["477544744412189697", "SHINOBI-AVR-Bare-Metal-SPI-Lab"],
+            ["477548989078745089", "SHINOBI-AVR-Bare-Metal-I2C-Lab"]
+          ];
+          assert.equal(await page.locator("#interactive-lab .avr-lab-card").count(), 3);
+          assert.equal(await page.locator("#interactive-lab .avr-lab-waveform").count(), 3);
+          assert.equal(await page.locator("#interactive-lab .avr-labs-identity img").count(), 1);
+          assert.equal(await page.locator("#interactive-lab .avr-lab-card h3").count(), 3);
+          for (const [projectId, repoName] of labs) {
+            const wokwi = page.locator('#interactive-lab a[href="https://wokwi.com/projects/' + projectId + '"]');
+            const repo = page.locator('#interactive-lab a[href="https://github.com/Anderson-Shinobi/' + repoName + '"]');
+            assert.equal(await wokwi.count(), 1, "Exactly one Wokwi CTA for " + projectId);
+            assert.equal(await repo.count(), 1, "Exactly one GitHub CTA for " + repoName);
+            for (const action of [wokwi, repo]) {
+              assert.equal(await action.getAttribute("target"), "_blank");
+              assert.match(await action.getAttribute("rel"), /noopener/);
+              assert.match(await action.getAttribute("rel"), /noreferrer/);
+            }
+            assert.equal((await wokwi.innerText()).replace("↗", "").trim(),
+              language === "pt-BR" ? "Executar no Wokwi" : "Launch Wokwi");
+            assert.equal((await repo.innerText()).replace("↗", "").trim(),
+              language === "pt-BR" ? "Código no GitHub" : "GitHub source");
+          }
+          const pwm = page.locator('#interactive-lab a[href="https://wokwi.com/projects/477357756254868481"]');
+          assert.equal(await pwm.getAttribute("aria-label"),
             language === "pt-BR"
               ? "Executar simulação SHINOBI AVR PWM no Wokwi (abre em nova aba)"
               : "Run SHINOBI AVR PWM simulation on Wokwi (opens in new tab)");
-          const evidence = page.locator('#interactive-lab a[href="https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-PWM-Lab/blob/main/evidence/VCD_VALIDATION.md"]');
-          assert.equal(await evidence.count(), 1, "Measured PWM evidence link");
-          const evidenceLabel = language === "pt-BR" ? "Evidência de PWM medido" : "Measured PWM evidence";
-          assert.equal((await evidence.innerText()).replace("↗", "").trim(), evidenceLabel, "Evidence link translated");
-          const independent = page.locator('#interactive-lab a[href="https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-PWM-Lab"]');
-          assert.equal(await independent.count(), 1, "Standalone laboratory repository action");
-          assert.equal(await independent.getAttribute("target"), "_blank");
-          assert.match(await independent.getAttribute("rel"), /noopener/);
-          const repoLabel = language === "pt-BR" ? "Ver firmware e circuito" : "View firmware and circuit";
-          assert.equal((await independent.innerText()).replace("↗", "").trim(), repoLabel, "Standalone repository link translated");
+          const heading = page.locator("#interactive-lab-heading");
+          assert.equal((await heading.innerText()).trim(),
+            language === "pt-BR" ? "Laboratórios SHINOBI AVR." : "SHINOBI AVR Labs.");
+          // Only the laboratory repositories contain detailed measurements and anomalies.
+          assert.equal(await page.locator('#interactive-lab a[href*="/evidence/"]').count(), 0);
+          assert.equal((await page.locator("#interactive-lab").innerText()).toLowerCase().includes("cpol"), false);
+          assert.equal((await page.locator("#interactive-lab").innerText()).includes("47.77"), false);
+          // All cards must remain readable without document-level horizontal overflow.
+          assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1),
+            "No horizontal overflow at " + width + "px");
           // Browser tests verify website navigation; physical hardware remains untested.
 
         }
