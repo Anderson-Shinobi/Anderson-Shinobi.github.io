@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 144" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">SHINOBI Raven Shield</title>
+<desc id="desc">Original angular raven inside a protective engineering shield.</desc>
+<defs>
+  <linearGradient id="frame" x1="14" y1="8" x2="112" y2="132" gradientUnits="userSpaceOnUse"><stop stop-color="#87E3EA"/><stop offset="1" stop-color="#8D6CE2"/></linearGradient>
+  <linearGradient id="plume" x1="32" y1="38" x2="99" y2="109" gradientUnits="userSpaceOnUse"><stop stop-color="#EDF9FE"/><stop offset="1" stop-color="#AA93FF"/></linearGradient>
+</defs>
+<!-- Original geometry, not traced or reproduced from a third-party image. -->
+<path d="M64 8 115 25v46c0 29-16 50-51 65C29 121 13 100 13 71V25L64 8Z" fill="#101A2B" stroke="url(#frame)" stroke-width="5" stroke-linejoin="round"/>
+<path d="M64 18 105 31v40c0 24-12 40-41 54-29-14-41-30-41-54V31L64 18Z" stroke="#344969" stroke-width="1.5"/>
+<!-- Stylized raven: angular wing, crown, beak, and feathered tail. -->
+<path d="m30 85 11-25 13-8-9 1 13-12 17-4-5-6 19 7 9 11 12 7-19 1-11-5-10 5 8 10-9-3 3 18-11-10-4 23-9-16-11 3 3-15Z" fill="url(#plume)"/>
+<path d="m52 64 18-8 6 8 13 2-13 7-7 22-8-15-15-5 6-11Z" fill="#0F1A2B"/>
+<path d="m83 47 12 2-11 3Z" fill="#101A2B"/>
+<path d="m77 48 4 1-3 3Z" fill="#72E7E5"/>
+<path d="M31 103c11 13 20 18 33 24" stroke="#6B8CAB" stroke-width="2" stroke-linecap="round"/>
+<path d="M97 103c-11 13-20 18-33 24" stroke="#6B8CAB" stroke-width="2" stroke-linecap="round"/>
+</svg>

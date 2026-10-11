@@ -127,55 +127,98 @@
 
     <section class="section interactive-lab-section" id="interactive-lab" aria-labelledby="interactive-lab-heading">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow section-index">INTERACTIVE LAB / 001</p>
-            <h2 id="interactive-lab-heading">From source to waveform<span class="hero-dot">.</span></h2>
-            <p class="section-lead">Explore a reproducible AVR project with source code, circuit wiring and testable hardware behavior.</p>
+        <div class="avr-labs-header">
+          <div class="avr-labs-header-copy">
+            <p class="eyebrow section-index">SHINOBI / ENGINEERING LABS</p>
+            <h2 id="interactive-lab-heading">SHINOBI AVR Labs<span class="hero-dot">.</span></h2>
+            <p class="section-lead">Three independent bare-metal firmware laboratories for Arduino Uno / ATmega328P. Explore register-level programming, reproducible Wokwi simulations and technical documentation on GitHub.</p>
           </div>
-          <span class="lab-availability">WOKWI DIGITAL TIMING VERIFIED</span>
-        </div>
-        <div class="lab-showcase">
-          <div class="lab-schematic" aria-hidden="true">
-            <div class="lab-schematic-top"><span>SHINOBI / WOKWI LAB</span><span>ATmega328P · 16 MHz</span></div>
-            <svg viewBox="0 0 540 170" focusable="false" aria-hidden="true" class="lab-signal" preserveAspectRatio="xMidYMid meet">
-              <path d="M0 140H540 M0 90H540 M0 40H540" class="lab-grid"/>
-              <path d="M8 140V40H28V140H48V40H68V140H88V40H108V140H128V40H148V140H168V40H188V140H208V40H228V140H248V40H268V140H288V40H308V140H328V40H348V140H368V40H388V140H408V40H428V140H448V40H468V140H488V40H508V140H528" class="lab-trace"/>
-            </svg>
-            <div class="lab-schematic-bottom"><span>OC1A / D9 · TIMER1 PWM</span><span>ILLUSTRATIVE · NOT A CAPTURE</span></div>
-          </div>
-          <div class="lab-description">
-            <p class="eyebrow">AVR · UNO R3 · REGISTER LEVEL</p>
-            <h3>GPIO + hardware PWM on Timer1</h3>
-            <p>Control an LED through OC1A/D9, toggle the onboard D13 LED, and examine serial messages and logic-analyzer connections — without Arduino HAL calls.</p>
-            <div class="lab-facts">
-              <span>976.56 Hz PWM</span>
-              <span>10% · 50% · 90% duty</span>
-              <span>UART 9600 bps</span>
-              <span>VCD-ready wiring</span>
-            </div>
-            <div class="lab-actions">
-              <a class="btn btn-primary" href="https://wokwi.com/projects/477357756254868481" target="_blank" rel="noopener noreferrer" aria-label="Run SHINOBI AVR PWM simulation on Wokwi (opens in new tab)">Run Simulation <span aria-hidden="true">↗</span></a>
-              <a class="btn btn-outline" href="https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-PWM-Lab" target="_blank" rel="noopener noreferrer">View firmware and circuit <span aria-hidden="true">↗</span></a>
-              <a class="btn btn-outline" href="https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-PWM-Lab/blob/main/evidence/VCD_VALIDATION.md" target="_blank" rel="noopener noreferrer">Measured PWM evidence <span aria-hidden="true">↗</span></a>
-            </div>
-            <p class="lab-secondary-link"><a href="https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-PWM-Lab/blob/main/README.md" target="_blank" rel="noopener noreferrer">Simulation instructions <span aria-hidden="true">↗</span></a></p>
-            <p class="lab-note">Author-supplied Wokwi VCD measured: 976.5625 Hz and 10.156%, 50%, 89.844% duty. Physical hardware remains untested.</p>
+          <div class="avr-labs-identity" aria-hidden="true">
+            <img src="assets/icons/shinobi-raven-shield.svg" alt="" width="96" height="108" loading="lazy" decoding="async">
+            <span>FROM PHYSICS<br>TO FIRMWARE</span>
           </div>
         </div>
-        <div class="lab-description">
-          <p class="eyebrow">AVR LABS / INDEPENDENT REPOSITORIES</p>
-          <h3>LAB 02: SPI · LAB 03: I²C / TWI</h3>
-          <p>Two independent bare-metal Arduino Uno laboratories with reproducible Wokwi measurements. SPI clock/loopback passed while a CPOL=1 discrepancy remains open. I²C delivered 100 kHz DS1307 reads and expected ACK/NACK; a second capture verified removal of a 47.77 ms SCL-low hold after correcting STOP-before-UART ordering.</p>
-          <div class="lab-actions">
-            <a class="btn btn-primary" href="https://wokwi.com/projects/477544744412189697" target="_blank" rel="noopener noreferrer">Run SPI simulation <span aria-hidden="true">↗</span></a>
-            <a class="btn btn-primary" href="https://wokwi.com/projects/477548989078745089" target="_blank" rel="noopener noreferrer" aria-label="Run SHINOBI AVR I2C TWI simulation on Wokwi (opens in new tab)">Run I²C/TWI simulation <span aria-hidden="true">↗</span></a>
-            <a class="btn btn-outline" href="https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-SPI-Lab" target="_blank" rel="noopener noreferrer">LAB 02 · SPI source &amp; tests <span aria-hidden="true">↗</span></a>
-            <a class="btn btn-outline" href="https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-I2C-Lab" target="_blank" rel="noopener noreferrer">LAB 03 · I²C/TWI source &amp; tests <span aria-hidden="true">↗</span></a>
-            <a class="btn btn-outline" href="https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-I2C-Lab/blob/main/evidence/I2C_VCD_VALIDATION.md" target="_blank" rel="noopener noreferrer">Measured I²C VCD evidence <span aria-hidden="true">↗</span></a>
-            <a class="btn btn-outline" href="https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-I2C-Lab/blob/main/evidence/I2C_POSTFIX_VCD_VALIDATION.md" target="_blank" rel="noopener noreferrer">Post-fix I²C timing evidence <span aria-hidden="true">↗</span></a>
-          </div>
-          <p class="lab-note">AVR builds and static tests passed. Post-fix I²C VCD shows 10 correct DS1307 reads and probe duration reduced from 47.87 ms to 108.875 µs. Physical hardware and I²C UART output are not yet verified.</p>
+
+        <div class="avr-labs-grid">
+          <article class="avr-lab-card avr-lab-pwm" aria-labelledby="avr-lab-pwm-title">
+            <div class="avr-lab-card-top"><span class="avr-lab-id">LAB / 01</span><span class="avr-lab-chip">AVR · UNO R3</span></div>
+            <div class="avr-lab-display" aria-hidden="true">
+              <div class="avr-lab-display-head"><span>PWM / TIMER1</span><span>OC1A · D9</span></div>
+              <svg class="avr-lab-waveform" viewBox="0 0 320 118" focusable="false" aria-hidden="true">
+                <path class="avr-lab-gridline" d="M0 24H320 M0 58H320 M0 92H320 M40 0V118 M100 0V118 M160 0V118 M220 0V118 M280 0V118"/>
+                <path class="avr-wave-pwm" d="M2 91V25H30V91H57V25H85V91H112V25H140V91H167V25H195V91H222V25H250V91H277V25H305V91H318"/>
+              </svg>
+              <div class="avr-lab-display-foot"><span>976.56 Hz</span><span>HARDWARE PWM</span></div>
+            </div>
+            <div class="avr-lab-card-body">
+              <p class="avr-lab-kicker">REGISTER-LEVEL CONTROL</p>
+              <h3 id="avr-lab-pwm-title">GPIO + hardware PWM</h3>
+              <p>Configure Timer1 and OC1A/D9 directly, control the onboard LED and inspect generated PWM and serial output without Arduino high-level peripheral APIs.</p>
+              <div class="avr-lab-tags"><span>Timer1</span><span>GPIO</span><span>PWM</span><span>UART</span></div>
+            </div>
+            <div class="avr-lab-card-actions">
+              <a class="btn btn-primary" href="https://wokwi.com/projects/477357756254868481" target="_blank" rel="noopener noreferrer" aria-label="Run SHINOBI AVR PWM simulation on Wokwi (opens in new tab)">Launch Wokwi <span aria-hidden="true">↗</span></a>
+              <a class="avr-lab-github" href="https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-PWM-Lab" target="_blank" rel="noopener noreferrer">GitHub source <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="avr-lab-card avr-lab-spi" aria-labelledby="avr-lab-spi-title">
+            <div class="avr-lab-card-top"><span class="avr-lab-id">LAB / 02</span><span class="avr-lab-chip">AVR · UNO R3</span></div>
+            <div class="avr-lab-display" aria-hidden="true">
+              <div class="avr-lab-display-head"><span>SPI / MASTER</span><span>1 MHz NOMINAL</span></div>
+              <svg class="avr-lab-waveform" viewBox="0 0 320 118" focusable="false" aria-hidden="true">
+                <path class="avr-lab-gridline" d="M0 20H320 M0 58H320 M0 94H320 M48 0V118 M112 0V118 M176 0V118 M240 0V118 M304 0V118"/>
+                <text class="avr-wave-label" x="4" y="17">SCK</text>
+                <path class="avr-wave-spi" d="M41 43V22H57V43H73V22H89V43H105V22H121V43H137V22H153V43H169V22H185V43H201V22H217V43H233V22H249V43H265V22H281V43H305"/>
+                <text class="avr-wave-label" x="4" y="60">MOSI</text>
+                <path class="avr-wave-data" d="M41 83H82L98 68H138L153 83H201L217 68H258L274 83H305"/>
+                <text class="avr-wave-label" x="4" y="112">MISO</text>
+                <path class="avr-wave-data avr-wave-data-secondary" d="M41 107H82L98 92H138L153 107H201L217 92H258L274 107H305"/>
+              </svg>
+              <div class="avr-lab-display-foot"><span>MOSI ↔ MISO</span><span>SPI MASTER</span></div>
+            </div>
+            <div class="avr-lab-card-body">
+              <p class="avr-lab-kicker">SERIAL PERIPHERAL INTERFACE</p>
+              <h3 id="avr-lab-spi-title">SPI Bare-Metal</h3>
+              <p>Configure the AVR SPI peripheral through registers and explore synchronous clocking, full-duplex transfers and MOSI/MISO loopback in a controlled simulation.</p>
+              <div class="avr-lab-tags"><span>SPCR</span><span>SCK</span><span>MOSI / MISO</span><span>SS</span></div>
+            </div>
+            <div class="avr-lab-card-actions">
+              <a class="btn btn-primary" href="https://wokwi.com/projects/477544744412189697" target="_blank" rel="noopener noreferrer">Launch Wokwi <span aria-hidden="true">↗</span></a>
+              <a class="avr-lab-github" href="https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-SPI-Lab" target="_blank" rel="noopener noreferrer">GitHub source <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="avr-lab-card avr-lab-i2c" aria-labelledby="avr-lab-i2c-title">
+            <div class="avr-lab-card-top"><span class="avr-lab-id">LAB / 03</span><span class="avr-lab-chip">AVR · UNO R3</span></div>
+            <div class="avr-lab-display" aria-hidden="true">
+              <div class="avr-lab-display-head"><span>I²C / TWI</span><span>DS1307 · 0x68</span></div>
+              <svg class="avr-lab-waveform" viewBox="0 0 320 118" focusable="false" aria-hidden="true">
+                <path class="avr-lab-gridline" d="M0 24H320 M0 58H320 M0 92H320 M48 0V118 M112 0V118 M176 0V118 M240 0V118 M304 0V118"/>
+                <text class="avr-wave-label" x="4" y="20">SCL</text>
+                <path class="avr-wave-i2c" d="M40 37H59V18H75V37H91V18H107V37H123V18H139V37H155V18H171V37H187V18H203V37H219V18H235V37H251V18H267V37H283V18H305"/>
+                <text class="avr-wave-label" x="4" y="73">SDA</text>
+                <path class="avr-wave-data" d="M40 65H53V93H106V65H150V93H206V65H253V93H292V65H305"/>
+                <circle class="avr-wave-node" cx="53" cy="93" r="4"/><circle class="avr-wave-node" cx="292" cy="65" r="4"/>
+              </svg>
+              <div class="avr-lab-display-foot"><span>START · ACK · STOP</span><span>100 kHz</span></div>
+            </div>
+            <div class="avr-lab-card-body">
+              <p class="avr-lab-kicker">TWO-WIRE INTERFACE</p>
+              <h3 id="avr-lab-i2c-title">I²C / TWI Bare-Metal</h3>
+              <p>Read DS1307 RTC registers using START, repeated START, ACK/NACK and STOP, with direct TWI register access and logic-analyzer inspection.</p>
+              <div class="avr-lab-tags"><span>TWBR / TWCR</span><span>DS1307</span><span>SDA</span><span>SCL</span></div>
+            </div>
+            <div class="avr-lab-card-actions">
+              <a class="btn btn-primary" href="https://wokwi.com/projects/477548989078745089" target="_blank" rel="noopener noreferrer">Launch Wokwi <span aria-hidden="true">↗</span></a>
+              <a class="avr-lab-github" href="https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-I2C-Lab" target="_blank" rel="noopener noreferrer">GitHub source <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </div>
+        <div class="avr-labs-bottom">
+          <span class="avr-labs-bottom-mark" aria-hidden="true"></span>
+          <p>Simulate the circuit. Explore the firmware. Find validation reports and experimental limitations in each GitHub repository.</p>
+          <span class="avr-labs-bottom-tag">SIMULATION ≠ PHYSICAL TEST</span>
         </div>
       </div>
     </section>

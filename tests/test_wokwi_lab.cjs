@@ -1,5 +1,5 @@
-/* Regression checks for the independently maintained AVR PWM laboratory.
- * Hardware validation and firmware compilation run in the lab's own CI.
+/* Independent AVR laboratory links and design-content regression.
+ * Protocol qualification and raw waveforms live in each lab's own repository.
  */
 "use strict";
 const assert = require("node:assert/strict");
@@ -8,24 +8,35 @@ const path = require("node:path");
 
 const root = path.resolve(__dirname, "..");
 const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
-const repo = "https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-PWM-Lab";
-const wokwi = "https://wokwi.com/projects/477357756254868481";
+const start = html.indexOf('id="interactive-lab"');
+const end = html.indexOf('class="section approach-section"', start);
+assert.ok(start >= 0 && end > start, "Missing AVR labs section");
+const section = html.slice(start, end);
+const labs = [
+  ["477357756254868481", "SHINOBI-AVR-Bare-Metal-PWM-Lab"],
+  ["477544744412189697", "SHINOBI-AVR-Bare-Metal-SPI-Lab"],
+  ["477548989078745089", "SHINOBI-AVR-Bare-Metal-I2C-Lab"]
+];
 
-for (const href of [
-  repo,
-  repo + "/blob/main/README.md",
-  repo + "/blob/main/evidence/VCD_VALIDATION.md",
-  wokwi
-]) {
-  assert.ok(html.includes('href="' + href + '"'), "Missing linked lab resource: " + href);
+assert.equal((section.match(/class="avr-lab-card avr-lab-/g) || []).length, 3);
+for (const [wokwiId, name] of labs) {
+  const live = 'href="https://wokwi.com/projects/' + wokwiId + '"';
+  const repo = 'href="https://github.com/Anderson-Shinobi/' + name + '"';
+  assert.equal(section.split(live).length - 1, 1, "Missing/duplicate Wokwi URL: " + wokwiId);
+  assert.equal(section.split(repo).length - 1, 1, "Missing/duplicate GitHub repo: " + name);
 }
+assert.ok(section.includes("assets/icons/shinobi-raven-shield.svg"));
+assert.ok(fs.existsSync(path.join(root, "assets/icons/shinobi-raven-shield.svg")));
+assert.doesNotMatch(section, /href="[^"]*\/evidence\//);
+assert.doesNotMatch(section, /CPOL|47[,.](?:77|87)|anomal(?:y|ia)/i);
 assert.doesNotMatch(html, /Anderson-Shinobi\.github\.io\/(?:tree|blob)\/main\/labs\/wokwi\/uno-baremetal-pwm/);
-for (const f of [
+
+// Lab source must never be duplicated within the portfolio repository.
+for (const file of [
   "sketch.ino", "diagram.json", "LICENSE",
   "evidence/measurements.csv", "evidence/VCD_VALIDATION.md"
 ]) {
-  assert.equal(fs.existsSync(path.join(root, "labs/wokwi/uno-baremetal-pwm", f)), false,
-    "Source file unexpectedly duplicated in website repo: " + f);
+  assert.equal(fs.existsSync(path.join(root, "labs/wokwi/uno-baremetal-pwm", file)), false,
+    "Source unexpectedly duplicated in website repo: " + file);
 }
-assert.match(html, /WOKWI DIGITAL TIMING VERIFIED/);
-console.log("PASS: independent AVR repository and simulator links; no duplicated lab source");
+console.log("PASS: three independent AVR labs, original crest, curated CTAs and no duplicated firmware");
