@@ -166,13 +166,14 @@
         <div class="lab-description">
           <p class="eyebrow">UPCOMING AVR LABS / INDEPENDENT REPOSITORIES</p>
           <h3>Next: SPI and I²C / TWI drivers</h3>
-          <p>Two new register-level Arduino Uno experiments with their own firmware, Wokwi wiring, MIT license and automated AVR build checks. Protocol timing and VCD measurements are still pending.</p>
+          <p>Two independent register-level Arduino Uno experiments with firmware, Wokwi wiring, MIT licenses and automated AVR build checks. SPI VCD measurements identified an open CPOL anomaly; I²C timing and protocol validation remain pending.</p>
           <div class="lab-actions">
             <a class="btn btn-primary" href="https://wokwi.com/projects/477544744412189697" target="_blank" rel="noopener noreferrer">Run SPI simulation <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-primary" href="https://wokwi.com/projects/477548989078745089" target="_blank" rel="noopener noreferrer" aria-label="Run SHINOBI AVR I2C TWI simulation on Wokwi (opens in new tab)">Run I²C/TWI simulation <span aria-hidden="true">↗</span></a>
             <a class="btn btn-outline" href="https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-SPI-Lab" target="_blank" rel="noopener noreferrer">LAB 02 · SPI source &amp; tests <span aria-hidden="true">↗</span></a>
             <a class="btn btn-outline" href="https://github.com/Anderson-Shinobi/SHINOBI-AVR-Bare-Metal-I2C-Lab" target="_blank" rel="noopener noreferrer">LAB 03 · I²C/TWI source &amp; tests <span aria-hidden="true">↗</span></a>
           </div>
-          <p class="lab-note">AVR build checks passed; Wokwi protocol captures and physical hardware validation have not been completed.</p>
+          <p class="lab-note">AVR build checks passed. SPI timing and loopback were measured in Wokwi (CPOL anomaly unresolved); I²C VCD and physical hardware validation are pending.</p>
         </div>
       </div>
     </section>
