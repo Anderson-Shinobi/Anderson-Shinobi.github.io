@@ -48,6 +48,13 @@ a { transition: color .2s ease; }
   background: linear-gradient(140deg,rgba(118,72,220,.3),rgba(18,27,43,.7));
   color: #e3d8ff;
 }
+.raven-brand-mark {
+  display: block;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex: none;
+}
 .brand-cursor { color: var(--cyan); }
 .brand-main { font-size: .9rem; letter-spacing: .08em; }
 .brand-main span { color: #d8dfea; }
